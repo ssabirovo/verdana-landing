@@ -1,0 +1,9 @@
+@config "../tailwind.config.js";
+@tailwind utilities;
+@import 'tailwindcss';
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
