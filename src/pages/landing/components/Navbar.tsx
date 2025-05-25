@@ -95,7 +95,7 @@ const Navbar = () => {
           </Flex>
           <Flex gap={10}>
             <FaTelegram size={20} />
-            <FaInstagram size={20} />
+            <FaInstagram size={20} />  
             <FaLocationArrow size={20} />
           </Flex>
         </Flex>
