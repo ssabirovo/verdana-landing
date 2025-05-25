@@ -7,10 +7,10 @@ const AntdProvider = ({ children }: React.PropsWithChildren) => {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: "#00b533",
-          colorInfo: "#00b533",
-          colorSuccess: "#00b533",
-          colorLink: "#00b533",
+          colorPrimary: "#2C6466",
+          colorInfo: "#2C6466",
+          colorSuccess: "#2C6466",
+          colorLink: "#2C6466",
           borderRadius: 6,
         },
       }}

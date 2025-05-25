@@ -1,7 +1,7 @@
 import { App as AntdApp } from 'antd';
 import AntProvider from './theme/ant-provider';
 import { Route, Routes } from 'react-router-dom';
-import Attandence from './pages/attandence/attandence';
+import Landing from './pages';
 
 // ----------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ export default function App() {
     <AntProvider>
       <AntdApp>
         <Routes>
-          <Route path="/" element={<Attandence />} />
+          <Route path="/" element={<Landing />} />
         </Routes>
       </AntdApp>
     </AntProvider>

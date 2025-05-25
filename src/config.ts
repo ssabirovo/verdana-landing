@@ -15,7 +15,7 @@ const getEnvironments = () => {
 };
 
 const config = {
-  APP_NAME: 'PDP Attandence',
+  APP_NAME: 'Verdana',
   API_ROOT: getEnvironments(),
   isProduction: isProduction(),
   DEFAULT_LANG_CODE: 'uz',
