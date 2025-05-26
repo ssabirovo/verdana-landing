@@ -20,6 +20,7 @@ module.exports = {
         primary: {
           DEFAULT: '#2C6466', // main primary color
         },
+        secondary: '#212D44',
       },
     },
   },

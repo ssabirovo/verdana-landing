@@ -1,3 +1,9 @@
 export { default as MiniLogo } from './MiniLogo';
 export { default as Hamburger } from './Hamburger';
 export { default as XMark } from './XMark';
+export { default as PlayGround } from './PlayGround';
+export { default as Camera } from './Camera';
+export { default as Window } from './Window';
+export { default as Park } from './Park';
+export { default as MoreSpace } from './MoreSpace';
+export { default as GreenZone } from './GreenZone';

@@ -12,6 +12,7 @@ const Navbar = () => {
 
   const [showNavbar, setShowNavbar] = useState(true);
   const [isTop, setIsTop] = useState(true); // New state for top scroll
+  // const [isColorChanged, setIsColorChanged] = useState();
 
   const lastScrollY = useRef(0);
 
@@ -19,7 +20,7 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      setIsTop(currentScrollY === 0); // True only at very top
+      setIsTop(currentScrollY < 100); // True only at very top
 
       if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
         setShowNavbar(false);
@@ -34,17 +35,18 @@ const Navbar = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   return (
     <Flex vertical className="text-primary bg-indigo-600">
       <Flex
         align="center"
-        className={`fixed top-0 z-50 h-16 w-full px-16 transition-all duration-300 ease-in-out ${
+        className={`fixed top-0 z-50 h-16 w-full px-16 transition-all duration-300 ease-in-out max-sm:flex-row-reverse max-sm:px-6 ${
           !showNavbar && !isNavbarOpened.value
             ? '-translate-y-full'
             : 'translate-y-0'
         } ${isTop ? 'bg-transparent' : 'bg-white shadow-md'}`}
       >
-        <Flex align="center" gap={20} className="w-full">
+        <Flex align="center" gap={20} className="w-full max-sm:justify-end">
           <Flex
             className="border-primary rounded-md border-2 p-1"
             onClick={() => isNavbarOpened.onToggle()}
@@ -62,13 +64,15 @@ const Navbar = () => {
               </div>
             </div>
           </Flex>
-          <p>Xonadonlar</p>
-          <p>Biz haqimizda</p>
+          <p className="max-sm:hidden">Xonadonlar</p>
+          <p className="max-sm:hidden">Biz haqimizda</p>
         </Flex>
         <div>
           <MiniLogo />
         </div>
-        <p className="w-full text-end">+998 (00) 000-44-33</p>
+        <p className="max-sm:hidd w-full text-end max-sm:hidden">
+          +998 (00) 000-44-33
+        </p>
       </Flex>
       <Flex
         className={`fixed bottom-0 left-0 h-[calc(100vh-4rem)] w-full transition-opacity duration-500 ${
@@ -80,7 +84,7 @@ const Navbar = () => {
         <Flex
           justify="space-between"
           vertical
-          className={`w-full transform bg-white py-16 pl-16 text-xl font-[300] transition-transform duration-500 ${
+          className={`w-full transform bg-white py-16 pl-16 text-xl font-[300] transition-transform duration-500 max-sm:px-6 ${
             isNavbarOpened.value ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
@@ -95,7 +99,7 @@ const Navbar = () => {
           </Flex>
           <Flex gap={10}>
             <FaTelegram size={20} />
-            <FaInstagram size={20} />  
+            <FaInstagram size={20} />
             <FaLocationArrow size={20} />
           </Flex>
         </Flex>
