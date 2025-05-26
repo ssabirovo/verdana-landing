@@ -7,3 +7,4 @@ export { default as Window } from './Window';
 export { default as Park } from './Park';
 export { default as MoreSpace } from './MoreSpace';
 export { default as GreenZone } from './GreenZone';
+export { default as Plus } from './plus';

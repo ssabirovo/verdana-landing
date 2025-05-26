@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import { About, Features, Hero, Navbar } from './components';
+import { About, Faq, Features, Hero, Navbar } from './components';
 
 const Landing = () => {
   return (
@@ -8,13 +8,14 @@ const Landing = () => {
       <Hero />
       <About />
       <Features />
+      <Faq />
       <div className="h-[100vh] bg-red-300">
         down
-        <Button>Sex</Button>
+        <Button>See</Button>
       </div>
       <div className="h-[100vh] bg-amber-200">
         down
-        <Button>Sex</Button>
+        <Button>See</Button>
       </div>
     </div>
   );
