@@ -58,7 +58,7 @@ const Features = () => {
       <Flex
         vertical
         justify="end"
-        className="w-full bg-[url('/public/images/kids.png')] bg-cover p-5 text-white"
+        className="w-full bg-[url('/images/kids.png')] bg-cover p-5 text-white"
       >
         <Flex vertical className="translate-y-[50%] bg-[#2C6466] p-4" gap={20}>
           <Flex align="end">

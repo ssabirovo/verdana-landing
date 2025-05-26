@@ -46,23 +46,23 @@ const Hero = () => {
           className={`relative h-max bg-amber-200 transition-all duration-500 ease-in-out max-sm:h-full`}
         >
           <img
-            src="/public/images/hero.png"
+            src="/images/hero.png"
             className={`transition-all duration-800 ease-in-out ${isNotTop && 'brightness-80 contrast-[110%] saturate-[120%] max-sm:opacity-0'}`}
             alt=""
           />
           {/* <img
-            src="/public/images/hero.png"
+            src="/images/hero.png"
             className={`absolute top-0 transition-all duration-800 ease-in-out ${isNotTop && 'brightness-80 contrast-[110%] saturate-[120%]'}`}
             alt=""
           /> */}
           <img
             className={`absolute top-0 transition-all duration-800 ease-in-out ${isNotTop && 'top-[50%] right-[50%] translate-[50%] translate-y-[-50%]'}`}
-            src="/public/images/border-white-logo.svg"
+            src="/images/border-white-logo.svg"
             alt=""
           />
           <img
             className={`absolute top-0 ${isNotTop && 'opacity-0'}`}
-            src="/public/images/hero-Photoroom.png"
+            src="/images/hero-Photoroom.png"
             alt=""
           />
         </Flex>
