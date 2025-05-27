@@ -70,9 +70,12 @@ const Navbar = () => {
         <div>
           <MiniLogo />
         </div>
-        <p className="max-sm:hidd w-full text-end max-sm:hidden">
-          +998 (00) 000-44-33
-        </p>
+        <a
+          href="tel:+998 78 150 12 12"
+          className="max-sm:hidd w-full text-end max-sm:hidden"
+        >
+          78 150 12 12
+        </a>
       </Flex>
       <Flex
         className={`fixed bottom-0 left-0 h-[calc(100vh-4rem)] w-full transition-opacity duration-500 ${
