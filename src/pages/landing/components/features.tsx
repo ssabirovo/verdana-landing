@@ -45,10 +45,15 @@ const Features = () => {
   return (
     <Flex className="my-30 px-16 max-sm:flex-col max-sm:px-6">
       <Flex vertical className="text-primary w-full p-5 py-20" gap={40}>
-        <p className="text-4xl text-center">Afzalliklarimiz</p>
-        <div className="grid grid-cols-2 gap-10" >
+        <p className="text-center text-4xl">Afzalliklarimiz</p>
+        <div className="grid grid-cols-2 gap-10">
           {features.map(({ icon, text }) => (
-            <Flex vertical justify="center" align="center" className='cursor-pointer text-center'>
+            <Flex
+              vertical
+              justify="center"
+              align="center"
+              className="cursor-pointer text-center"
+            >
               {icon}
               <p>{text}</p>
             </Flex>
@@ -63,9 +68,9 @@ const Features = () => {
         <Flex vertical className="translate-y-[50%] bg-[#2C6466] p-4" gap={20}>
           <Flex align="end">
             <PlayGround />
-            <p className="">Bolalar maydonchasi</p>
+            <p className="leading-none">Bolalar maydonchasi</p>
           </Flex>
-          <p>
+          <p className="text-[16px] font-[200]">
             Majmua ichida ikki qavatli o‘yin maydonchalari joy olishi ko'zda
             tutilgan bo‘lib, u yerda eng jajji rezidentlar ochiq havoda vaqtini
             maroqli va xavfsiz o‘tkazishlari mumkin.

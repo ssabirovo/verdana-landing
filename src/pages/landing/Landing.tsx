@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import { About, Faq, Features, Hero, Navbar } from './components';
+import { About, Faq, Features, FormSection, Hero, Navbar } from './components';
 
 const Landing = () => {
   return (
@@ -9,6 +9,7 @@ const Landing = () => {
       <About />
       <Features />
       <Faq />
+      <FormSection />
       <div className="h-[100vh] bg-red-300">
         down
         <Button>See</Button>

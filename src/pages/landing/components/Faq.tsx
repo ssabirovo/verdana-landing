@@ -1,4 +1,4 @@
-import { Collapse, theme, type CollapseProps } from 'antd';
+import { Collapse, Flex, theme, type CollapseProps } from 'antd';
 import type { CSSProperties } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 
@@ -42,16 +42,21 @@ const Faq = () => {
   };
 
   return (
-    <div className="px-16 py-[100px]">
+    <div className="px-16 py-[100px] max-sm:px-6">
       <Collapse
-        className="text-xl"
+        className="text-[18px] max-sm:text-[16px]"
         bordered={false}
         defaultActiveKey={['1']}
         expandIcon={({ isActive }) => (
-          <PlusOutlined
-            rotate={isActive ? 45 : 0}
-            style={{ fontSize: '24px', color: 'gray' }}
-          />
+          <Flex justify='center' align='center'>
+            <PlusOutlined
+              rotate={isActive ? 45 : 0}
+              style={{
+                fontSize: '24px',
+                color: 'gray',
+              }}
+            />
+          </Flex>
         )}
         style={{ background: token.colorBgContainer }}
         items={getItems(panelStyle)}
