@@ -7,6 +7,7 @@ import {
   Hero,
   Navbar,
 } from './components';
+import Plans from './components/Plans';
 
 const Landing = () => {
   return (
@@ -15,6 +16,7 @@ const Landing = () => {
       <Hero />
       <About />
       <Features />
+      <Plans />
       <Faq />
       <FormSection />
       <Footer />

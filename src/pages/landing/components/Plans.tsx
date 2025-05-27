@@ -1,0 +1,186 @@
+import { Button, Flex } from 'antd';
+import { useState } from 'react';
+
+const planirovkalar = [
+  {
+    roomCount: 1,
+    price: '1 550 080 000',
+    allMeters: 45.8,
+    photoUrl: '/images/1-xona.png',
+    rooms: [
+      {
+        name: 'Oshxona',
+        meter: 15.2,
+      },
+      {
+        name: 'koridor',
+        meter: 8.5,
+      },
+      {
+        name: 'Umumiy xona',
+        meter: 16.4,
+      },
+      {
+        name: 'Hojatxona',
+        meter: 2.4,
+      },
+      {
+        name: 'Hammom',
+        meter: 16.4,
+      },
+    ],
+  },
+
+  {
+    roomCount: 2,
+    price: '1 550 080 000',
+    allMeters: 45.8,
+    photoUrl: '/images/2-xona.png',
+    rooms: [
+      {
+        name: 'Studiya',
+        meter: 30.8,
+      },
+      {
+        name: 'Hojatxona',
+        meter: 4.2,
+      },
+      {
+        name: 'Yotoqxona',
+        meter: 18.1,
+      },
+    ],
+  },
+  {
+    roomCount: 3,
+    price: '1 550 080 000',
+    allMeters: 86.6,
+    photoUrl: '/images/3-xona.png',
+    rooms: [
+      {
+        name: 'Oshxona',
+        meter: 37.7,
+      },
+      {
+        name: 'Koridor',
+        meter: 16.5,
+      },
+      {
+        name: 'Hojatxona',
+        meter: 2.7,
+      },
+      {
+        name: 'Dush',
+        meter: 2.9,
+      },
+      {
+        name: 'Yotoqxona-1',
+        meter: 12.3,
+      },
+      {
+        name: 'Yotoqxona-2',
+        meter: 14.3,
+      },
+    ],
+  },
+  {
+    roomCount: 4,
+    price: '1 550 080 000',
+    allMeters: 86.6,
+    photoUrl: '/images/4-xona.png',
+    rooms: [
+      {
+        name: 'Oshxona',
+        meter: 38.3,
+      },
+      {
+        name: 'Koridor',
+        meter: 18.9,
+      },
+      {
+        name: 'Hojatxona',
+        meter: 3.1,
+      },
+      {
+        name: 'Dush',
+        meter: 3.3,
+      },
+      {
+        name: 'Yotoqxona-1',
+        meter: 18.4,
+      },
+      {
+        name: 'Yotoqxona-2',
+        meter: 15.7,
+      },
+      {
+        name: 'Yotoqxona-2',
+        meter: 12.4,
+      },
+    ],
+  },
+];
+
+const Plans = () => {
+  const [activeIndex, setActiveIndex] = useState(3);
+  const { allMeters, photoUrl, price, roomCount, rooms } =
+    planirovkalar[activeIndex];
+
+  return (
+    <Flex vertical gap={60} className="text-primary py-16" align="center">
+      <p className="text-5xl">Qulay rejalashtirish</p>
+      <Flex gap={20}>
+        {planirovkalar.map(({ roomCount }, index) => (
+          <div
+            onClick={() => setActiveIndex(index)}
+            className={`text-primary cursor-pointer bg-gray-100 px-6 py-3 ${index === activeIndex ? 'bg-primary text-white' : 'text-primary bg-gray-100'}`}
+          >
+            {roomCount} xonali
+          </div>
+        ))}
+      </Flex>
+      <Flex className="w-full">
+        <Flex className="w-full p-16" justify="center" align="center">
+          <img src={photoUrl}></img>
+        </Flex>
+        <Flex
+          vertical
+          gap={40}
+          className="bg-primary w-full p-16 text-white"
+          justify="space-between"
+        >
+          <Flex vertical gap={40}>
+            <Flex
+              justify="space-between"
+              className="w-full text-4xl font-[600]"
+              align="start"
+            >
+              <Flex vertical>
+                <p>{roomCount} xonali</p>
+                <p className="text-[16px] font-[100]">{price} so'mdan</p>
+              </Flex>
+              <p>{allMeters}м²</p>
+            </Flex>
+
+            <Flex gap={20} vertical className="w-full text-[18px]">
+              {rooms.map(({ meter, name }) => (
+                <Flex
+                  justify="space-between"
+                  className="w-full border-b border-white pb-1"
+                >
+                  <p>{name}:</p>
+                  <p>{meter}м²</p>
+                </Flex>
+              ))}
+            </Flex>
+          </Flex>
+          <Button className="w-max rounded-none border-none px-6 py-5 text-[18px]">
+            Bog'lanish
+          </Button>
+        </Flex>
+      </Flex>
+    </Flex>
+  );
+};
+
+export default Plans;
