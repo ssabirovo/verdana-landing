@@ -10,14 +10,15 @@ function FormSection() {
           justify="center"
           align="end"
         >
-          <img src="/public/images/white-full-logo.svg" alt="" />
+          1
         </Flex>
         <Flex
-          className="w-full bg-white/30 px-14 py-[200px] backdrop-blur-lg"
+          className="w-full bg-gradient-to-br from-[#2C6466] to-[#082425] px-14 py-[200px]"
           vertical
           gap={50}
         >
-          <p className="text-primary text-2xl">
+          <img width={200} src="/public/images/white-full-logo.svg" alt="" />
+          <p className="text-2xl text-white">
             Be’pul konsultatsiya uchun ma’lumotlaringizni qoldiring
           </p>
 
@@ -51,40 +52,10 @@ function FormSection() {
           <p>Toshkent sh. Mirobod tumani, Shahrisabz tor ko'chasi, 2A</p>
         </Flex>
         <div className="z-30 w-full" style={{ overflow: 'hidden' }}>
-          <a
-            href="https://yandex.uz/maps/10335/tashkent/?utm_medium=mapframe&utm_source=maps"
-            style={{
-              color: '#eee',
-              fontSize: '12px',
-              position: 'absolute',
-              top: '0px',
-            }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ташкент
-          </a>
-          <a
-            href="https://yandex.uz/maps/10335/tashkent/?ll=69.388434%2C41.320815&mode=whatshere&utm_medium=mapframe&utm_source=maps&whatshere%5Bpoint%5D=69.383164%2C41.319419&whatshere%5Bzoom%5D=18.02&z=15.84"
-            style={{
-              color: '#eee',
-              fontSize: '12px',
-              position: 'absolute',
-              top: '14px',
-            }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Яндекс Карты
-          </a>
           <iframe
-            src="https://yandex.uz/map-widget/v1/?ll=69.388434%2C41.320815&mode=whatshere&whatshere%5Bpoint%5D=69.383164%2C41.319419&whatshere%5Bzoom%5D=18.02&z=15.84"
+            className="h-[500px]"
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A465308b58897c2f537cd3531b140a7459af40719e1b7007c943e02975026028a&amp;source=constructor"
             width="100%"
-            height="600"
-            frameBorder="1"
-            allowFullScreen
-            style={{ position: 'relative' }}
-            title="Yandex Map"
           ></iframe>
         </div>
       </Flex>

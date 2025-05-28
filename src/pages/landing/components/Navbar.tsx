@@ -14,14 +14,14 @@ const Navbar = () => {
 
   const [showNavbar, setShowNavbar] = useState(true);
   const [isTop, setIsTop] = useState(true); // New state for top scroll
-  const [isNotTop, setIsNotTop] = useState(false);
+  const [textColorChanged, setTextColorChanged] = useState(false);
 
   const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY !== 0) {
-        setIsNotTop(true);
+        setTextColorChanged(true);
         window.removeEventListener('scroll', handleScroll);
       }
     };
@@ -51,21 +51,18 @@ const Navbar = () => {
   }, []);
 
   return (
-    <Flex
-      vertical
-      className={`text-primary bg-indigo-600 ${isNotTop && 'text-white'} ${showNavbar && 'text-primary'}`}
-    >
+    <Flex vertical>
       <Flex
         align="center"
-        className={`fixed top-0 z-50 h-16 w-full px-16 transition-all duration-300 ease-in-out max-sm:flex-row-reverse max-sm:px-6 ${
+        className={`text-primary fixed top-0 z-50 h-16 w-full px-16 transition-all duration-300 ease-in-out max-sm:flex-row-reverse max-sm:px-6 ${
           !showNavbar && !isNavbarOpened.value
             ? '-translate-y-full'
             : 'translate-y-0'
-        } ${isTop ? 'bg-transparent' : 'bg-white shadow-md'} `}
+        } ${!textColorChanged ? 'text-primary bg-transparent' : isTop ? 'bg-transparent text-white' : 'text-primary bg-white shadow-md'} `}
       >
         <Flex align="center" gap={20} className="w-full max-sm:justify-end">
           <Flex
-            className={'border-primary rounded-md border-2 p-1'}
+            className={`rounded-md border-2 p-1 ${!textColorChanged ? 'border-primary' : isTop ? 'border-white' : 'border-primary'}`}
             onClick={() => isNavbarOpened.onToggle()}
           >
             <div className="relative flex h-5 w-5 items-center justify-center overflow-hidden">
@@ -89,7 +86,7 @@ const Navbar = () => {
         </div>
         <a
           href="tel:+998 78 150 12 12"
-          className="max-sm:hidd w-full text-end max-sm:hidden"
+          className={`max-sm:hidd w-full text-end max-sm:hidden ${!textColorChanged ? 'text-primary' : isTop ? 'text-white' : 'text-primary'}`}
         >
           78 150 12 12
         </a>

@@ -29,7 +29,7 @@ const CustomCarousel = ({ children }: { children: React.ReactNode[] }) => {
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`h-10 w-10 border-white rounded-full border-4 transition-all duration-300 ${
+            className={`h-10 w-10 max-sm:h-5 max-sm:w-5 border-white rounded-full border-4 transition-all duration-300 ${
               index === activeIndex ? 'bg-primary' : 'bg-white'
             }`}
           />
