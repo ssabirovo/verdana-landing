@@ -1,0 +1,21 @@
+/* Make dots bigger */
+:global(.custom-carousel-wrapper .slick-dots li button) {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #aaa;
+}
+
+:global(.custom-carousel-wrapper .slick-dots li.slick-active button) {
+  background-color: #2c6466;
+}
+
+/* Make arrows bigger */
+:global(.custom-carousel-wrapper .slick-prev),
+:global(.custom-carousel-wrapper .slick-next) {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  color: #fff;
+}

@@ -34,7 +34,7 @@ const planirovkalar = [
   {
     roomCount: 2,
     price: '1 550 080 000',
-    allMeters: 45.8,
+    allMeters: 53.1,
     photoUrl: '/images/2-xona.png',
     rooms: [
       {
@@ -86,7 +86,7 @@ const planirovkalar = [
   {
     roomCount: 4,
     price: '1 550 080 000',
-    allMeters: 86.6,
+    allMeters: 120.1,
     photoUrl: '/images/4-xona.png',
     rooms: [
       {
@@ -127,29 +127,37 @@ const Plans = () => {
     planirovkalar[activeIndex];
 
   return (
-    <Flex vertical gap={60} className="text-primary py-16" align="center">
-      <p className="text-5xl">Qulay rejalashtirish</p>
-      <Flex gap={20}>
+    <Flex
+      vertical
+      className="text-primary gap-14 py-16 max-sm:gap-5"
+      align="center"
+    >
+      <p className="text-5xl max-sm:text-2xl">Qulay rejalashtirish</p>
+      <Flex className="gap-5 max-sm:gap-1">
         {planirovkalar.map(({ roomCount }, index) => (
           <div
             onClick={() => setActiveIndex(index)}
-            className={`text-primary cursor-pointer bg-gray-100 px-6 py-3 ${index === activeIndex ? 'bg-primary text-white' : 'text-primary bg-gray-100'}`}
+            className={`text-primary cursor-pointer bg-gray-100 px-6 py-3 max-sm:px-3 max-sm:py-1 ${index === activeIndex ? 'bg-primary text-white' : 'text-primary bg-gray-100'}`}
           >
             {roomCount} xonali
           </div>
         ))}
       </Flex>
-      <Flex className="w-full">
-        <Flex className="w-full p-16" justify="center" align="center">
+      <Flex className="w-full max-sm:flex-col">
+        <Flex
+          className="w-full p-16 max-sm:p-4 max-sm:py-0"
+          justify="center"
+          align="center"
+        >
           <img src={photoUrl}></img>
         </Flex>
         <Flex
           vertical
           gap={40}
-          className="bg-primary w-full p-16 text-white"
+          className="bg-primary w-full p-16 text-white max-sm:items-center max-sm:p-6"
           justify="space-between"
         >
-          <Flex vertical gap={40}>
+          <Flex vertical gap={40} className="w-full">
             <Flex
               justify="space-between"
               className="w-full text-4xl font-[600]"

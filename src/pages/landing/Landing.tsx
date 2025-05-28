@@ -6,6 +6,7 @@ import {
   FormSection,
   Hero,
   Navbar,
+  CarouselSection,
 } from './components';
 import Plans from './components/Plans';
 
@@ -15,6 +16,7 @@ const Landing = () => {
       <Navbar />
       <Hero />
       <About />
+      <CarouselSection />
       <Features />
       <Plans />
       <Faq />

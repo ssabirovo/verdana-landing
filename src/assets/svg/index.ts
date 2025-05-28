@@ -8,4 +8,5 @@ export { default as Park } from './Park';
 export { default as MoreSpace } from './MoreSpace';
 export { default as GreenZone } from './GreenZone';
 export { default as Plus } from './Plus';
+export { default as Parking } from './Parking';
 export { default as House } from './House';

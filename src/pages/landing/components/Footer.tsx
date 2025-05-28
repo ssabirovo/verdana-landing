@@ -8,7 +8,7 @@ const Footer = () => {
       justify="space-between"
       className="bg-[url('/images/footer-bg.png')] bg-cover px-16 py-16 text-[16px] text-white"
     >
-      <Flex vertical className="w-full" gap={40}>
+      <Flex vertical className="w-full max-sm:items-center" gap={40}>
         <img className="w-[200px]" src="/images/white-full-logo.svg" alt="" />
 
         <a
@@ -18,7 +18,7 @@ const Footer = () => {
           +998 78 150 12 12
         </a>
 
-        <Flex gap={20}>
+        <Flex gap={20} className="text-center max-sm:justify-center">
           <a
             className="text-white"
             href="https://www.instagram.com/verdana_uz "
@@ -33,7 +33,7 @@ const Footer = () => {
           </a>
         </Flex>
       </Flex>
-      <Flex vertical className="w-full text-center" gap={30}>
+      <Flex vertical className="w-full text-center max-sm:hidden" gap={30}>
         <Flex vertical>
           <p className="font-[600]">Sotuv ofisi</p>
           <p className="font-[100]">
@@ -45,13 +45,18 @@ const Footer = () => {
           <p className="font-[100]">Dush-Jum 9:00-18:00</p>
         </Flex>
       </Flex>
-      <Flex vertical className="w-full text-end font-[100] " gap={10} align='end'>
-        <p className="text-white font-[600]">Bo'limlar</p>
-        <a className='text-white w-max text-end'>Afzalliklar</a>
-        <a className='text-white w-max text-end'>Xonadonlar</a>
-        <a className='text-white w-max text-end'>Bepul Konsultatsiya</a>
-        <a className='text-white w-max text-end'>Loyiha infratuzilmasi</a>
-        <a className='text-white w-max text-end'>Ko’p beriladigan savollar</a>
+      <Flex
+        vertical
+        className="w-full text-end font-[100] max-sm:hidden"
+        gap={10}
+        align="end"
+      >
+        <p className="font-[600] text-white">Bo'limlar</p>
+        <a className="w-max text-end text-white">Afzalliklar</a>
+        <a className="w-max text-end text-white">Xonadonlar</a>
+        <a className="w-max text-end text-white">Bepul Konsultatsiya</a>
+        <a className="w-max text-end text-white">Loyiha infratuzilmasi</a>
+        <a className="w-max text-end text-white">Ko’p beriladigan savollar</a>
       </Flex>
     </Flex>
   );

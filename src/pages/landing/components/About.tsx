@@ -6,7 +6,7 @@ const About = () => {
       <Flex className="w-full bg-[url('/images/about-left.png')] p-16 py-20 bg-cover text-transparent max-sm:hidden">
         a
       </Flex>
-      <Flex vertical className="w-full p-16 py-20 text-white" gap={30}>
+      <Flex vertical className="w-full p-16 py-20 text-white max-sm:px-6" gap={30}>
         <Flex vertical className="text-6xl font-[100]">
           <p>Biz</p>
           <p className="text-[#009499]">haqimizda</p>

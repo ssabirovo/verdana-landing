@@ -7,14 +7,28 @@ import { useEffect, useRef, useState } from 'react';
 import { FaLocationArrow, FaTelegram } from 'react-icons/fa6';
 import { FaInstagram } from 'react-icons/fa';
 
+// let isChanged = false;
+
 const Navbar = () => {
   const isNavbarOpened = useBoolean(false);
 
   const [showNavbar, setShowNavbar] = useState(true);
   const [isTop, setIsTop] = useState(true); // New state for top scroll
-  // const [isColorChanged, setIsColorChanged] = useState();
+  const [isNotTop, setIsNotTop] = useState(false);
 
   const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY !== 0) {
+        setIsNotTop(true);
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,18 +51,21 @@ const Navbar = () => {
   }, []);
 
   return (
-    <Flex vertical className="text-primary bg-indigo-600">
+    <Flex
+      vertical
+      className={`text-primary bg-indigo-600 ${isNotTop && 'text-white'} ${showNavbar && 'text-primary'}`}
+    >
       <Flex
         align="center"
         className={`fixed top-0 z-50 h-16 w-full px-16 transition-all duration-300 ease-in-out max-sm:flex-row-reverse max-sm:px-6 ${
           !showNavbar && !isNavbarOpened.value
             ? '-translate-y-full'
             : 'translate-y-0'
-        } ${isTop ? 'bg-transparent' : 'bg-white shadow-md'}`}
+        } ${isTop ? 'bg-transparent' : 'bg-white shadow-md'} `}
       >
         <Flex align="center" gap={20} className="w-full max-sm:justify-end">
           <Flex
-            className="border-primary rounded-md border-2 p-1"
+            className={'border-primary rounded-md border-2 p-1'}
             onClick={() => isNavbarOpened.onToggle()}
           >
             <div className="relative flex h-5 w-5 items-center justify-center overflow-hidden">
