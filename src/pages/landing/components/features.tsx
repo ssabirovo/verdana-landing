@@ -15,32 +15,32 @@ const features = [
     text: 'Bolalar maydonchasi',
     photoUrl: '/images/kids.png',
     description:
-      'Majmua ichida ikki qavatli o‘yin maydonchalari joy olishi ko‘zda tutilgan bo‘lib, u yerda eng jajji rezidentlar ochiq havoda vaqtini maroqli va xavfsiz o‘tkazishlari mumkin.',
+      'Farzandlaringiz uchun xavfsiz, zamonaviy va ekologik toza materiallardan qurilgan o‘yin maydonchasi. Farzandingiz ko‘z oldingizda o‘ynaydi, siz esa xotirjam bo‘lasiz.',
   },
   {
     icon: <Camera />,
-    text: 'Xavfsizlik',
+    text: 'Qo‘riqlanadigan hudud',
     photoUrl: '/images/camera-man.png',
     description:
-      'Majmuada 24/7 video kuzatuv va xavfsizlik xizmati faoliyat yuritadi. Bu esa barcha rezidentlar, ayniqsa bolalar va yoshi kattalar uchun tinch va xavotirsiz muhitni ta’minlaydi.',
+      'Hudud to‘liq yopiq bo‘lib, 24/7 videokuzatuv va xavfsizlik xizmati bilan ta’minlangan. Har bir rezidentning osoyishtaligi biz uchun muhim.',
   },
   {
     icon: <Window />,
     text: 'Toza havo',
     photoUrl: '/images/clean-air.png',
     description:
-      'Hudud keng va yashil maydonlarga boy bo‘lib, bu yerda havoning tozaligi tabiiy tarzda saqlanadi. Ayniqsa ertalabki sayrlar va ochiq havodagi mashg‘ulotlar uchun ayni muddao.',
+      'Tirbandlikdan yiroq, shahar shovqinidan holi joyda joylashgan Verdana — toza havosi bilan sog‘lom turmush tarzini kafolatlaydi. Har nafasda yengillik.',
   },
   {
     icon: <Park />,
-    text: "Yangi O'zbekiston bog'i yonida",
+    text: 'Yangi O‘zbekiston bog‘i yaqinida',
     photoUrl: '/images/park.png',
     description:
-      'Majmua Yangi O‘zbekiston bog‘i yaqinida joylashgani sababli rezidentlar har kuni tabiat qo‘ynida sayr qilish, dam olish va sog‘lom turmush tarzini davom ettirish imkoniyatiga ega bo‘ladilar.',
+      'Verdanadan chiqib, bir necha qadamda Yangi O‘zbekiston bog‘iga yetasiz. Ertalabgi yugurishlar, oilaviy sayrlar yoki sokin dam olish uchun ideal joy.',
   },
   {
     icon: <Parking />,
-    text: 'Yer osti parkovka',
+    text: 'Yer osti va yer usti avtoturargohlar',
     photoUrl: '/images/parking.png',
     description:
       'Majmua hududida zamonaviy yer osti avtoturargohi qurilishi rejalashtirilgan bo‘lib, bu rezidentlarga qulay va xavfsiz avtomobil saqlash imkoniyatini yaratadi hamda hovli maydonining ochiq va tartibli bo‘lishini ta’minlaydi.',
@@ -50,7 +50,7 @@ const features = [
     text: 'Yashil hudud',
     photoUrl: '/images/green.png',
     description:
-      'Majmua atrofi ko‘plab daraxtlar, gulzorlar va yashil maysazorlarga boy bo‘lib, ekologik jihatdan toza va ko‘rkam muhitni ta’minlaydi. Bu yashash uchun nafaqat qulay, balki sog‘lom muhitdir.',
+      'Toza havo, sokin muhit va landshaft dizayn asosida barpo etilayotgan yashil maydonlar — bu yerda siz nafaqat yashaysiz, balki dam olasiz. Har kuni tabiat bag‘rida bo‘lish hissi.',
   },
 ];
 
@@ -60,16 +60,20 @@ const Features = () => {
   const { description, icon, text, photoUrl } = features[activeIndex];
 
   return (
-    <Flex id="Features" className="my-30 mb-16 px-16 max-sm:flex-col max-sm:px-6 max-sm:mb-0">
+    <Flex
+      id="Features"
+      className="my-30 mb-16 px-16 max-sm:mb-0 max-sm:flex-col max-sm:px-6"
+    >
       <Flex vertical className="text-primary w-full p-5 py-20" gap={40}>
         <p className="text-center text-4xl">Afzalliklarimiz</p>
         <div className="grid grid-cols-2 gap-10">
           {features.map(({ icon, text }, featuresIndex) => (
             <Flex
+              key={featuresIndex}
               vertical
               justify="center"
               align="center"
-              className="cursor-pointer text-center"
+              className={`cursor-pointer text-center`}
               onClick={() => setActiveIndex(featuresIndex)}
             >
               {icon}

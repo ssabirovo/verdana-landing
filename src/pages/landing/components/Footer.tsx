@@ -37,7 +37,8 @@ const Footer = () => {
         <Flex vertical>
           <p className="font-[600]">Sotuv ofisi</p>
           <p className="font-[100]">
-            Toshkent sh. Mirobod tumani, <br /> Shahrisabz tor ko'chasi, 2A
+            Toshkent sh. Mirzo Ulug'bek tumani, <br /> Yangi O'zbekiston ko'chasi
+             
           </p>
         </Flex>
         <Flex vertical>

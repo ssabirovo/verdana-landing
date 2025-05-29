@@ -1,103 +1,36 @@
-import { Button, Flex, Input } from 'antd';
+import axios from 'axios';
+import { Button, Flex, Form, Input } from 'antd';
 import { House } from '../../../assets/svg';
 
 function FormSection() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleSubmit = async (values: any) => {
+    try {
+      const response = await axios.post(
+        'https://service.app.uysot.uz/v1/external-source',
+        {
+          phoneNumber: `+998${values.age}`,
+          name: values.name,
+          tagList: ['#website', 'landing-page'],
+          houseName: 'VERDANA',
+          esType: 'WEBSITE',
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Auth':
+              'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTIiLCJleHAiOjY5OTM3MDc0MDJ9.skQsm_7dkoKi3QCZze0k1-NG_8g8_67KIpa96sD1nqw', // Replace with your actual token
+          },
+        },
+      );
+      console.log('Success:', response.data);
+    } catch (error) {
+      console.error('Submission error:', error);
+    }
+  };
+
   return (
     <div className="w-">
-      <Flex
-        id="Form"
-        className="flex-row-reverse bg-[url('/images/form-bg-3.png')] bg-cover px-16 text-2xl max-sm:px-0"
-      >
-        <Flex
-          className="w-full px-14 py-16 max-sm:hidden"
-          justify="center"
-          align="end"
-        >
-          1
-        </Flex>
-        <Flex
-          className="my-[100px] rounded-2xl bg-white p-14"
-          align="center"
-          vertical
-          gap={40}
-        >
-          <img width={200} src="/public/images/full-logo-dark.svg" alt="" />
-          <p className="text-primary text-2xl">
-            Be’pul konsultatsiya uchun ma’lumotlaringizni qoldiring
-          </p>
-
-          <Flex vertical gap={20} className="w-full">
-            <Input
-              className="w-full border-2 border-gray-200 text-2xl focus:border-green-700 focus:shadow-none"
-              placeholder="Ism"
-            />
-            <Flex className="w-full">
-              <Flex
-                className="text-primary rounded-tl-md rounded-bl-md bg-gray-200 p-2 px-4 text-[18px]"
-                align="center"
-              >
-                +998
-              </Flex>
-              <Input
-                type="number"
-                className="rounded-tl-none rounded-bl-none border-2 border-gray-200 text-2xl focus:border-green-700 focus:shadow-none"
-                placeholder="Telefon raqam"
-              />
-            </Flex>
-          </Flex>
-
-          <Button className="bg-primary border-primary w-full border-none py-6 text-2xl text-white hover:border hover:bg-green-900">
-            Yuborish
-          </Button>
-        </Flex>
-      </Flex>
-      <Flex
-        id="Form"
-        className="bg-[url('/images/form-bg-3-flip.png')] bg-cover px-16 text-2xl max-sm:px-0"
-      >
-        <Flex
-          className="w-full px-14 py-16 max-sm:hidden"
-          justify="center"
-          align="end"
-        >
-          1
-        </Flex>
-        <Flex
-          className="my-[100px] rounded-2xl bg-white p-14"
-          align="center"
-          vertical
-          gap={40}
-        >
-          <img width={200} src="/public/images/full-logo-dark.svg" alt="" />
-          <p className="text-primary text-2xl">
-            Be’pul konsultatsiya uchun ma’lumotlaringizni qoldiring
-          </p>
-
-          <Flex vertical gap={20} className="w-full">
-            <Input
-              className="w-full border-2 border-gray-200 text-2xl focus:border-green-700 focus:shadow-none"
-              placeholder="Ism"
-            />
-            <Flex className="w-full">
-              <Flex
-                className="text-primary rounded-tl-md rounded-bl-md bg-gray-200 p-2 px-4 text-[18px]"
-                align="center"
-              >
-                +998
-              </Flex>
-              <Input
-                type="number"
-                className="rounded-tl-none rounded-bl-none border-2 border-gray-200 text-2xl focus:border-green-700 focus:shadow-none"
-                placeholder="Telefon raqam"
-              />
-            </Flex>
-          </Flex>
-
-          <Button className="bg-primary border-primary w-full border-none py-6 text-2xl text-white hover:border hover:bg-green-900">
-            Yuborish
-          </Button>
-        </Flex>
-      </Flex>
       <Flex
         id="Form"
         className="bg-[url('/images/form-bg-3.png')] bg-cover px-16 text-2xl max-sm:px-0"
@@ -109,84 +42,53 @@ function FormSection() {
         >
           1
         </Flex>
-        <Flex
-          className="my-[100px] rounded-2xl bg-white p-14"
-          align="center"
-          vertical
-          gap={40}
-        >
-          <img width={200} src="/public/images/full-logo-dark.svg" alt="" />
-          <p className="text-primary text-2xl">
-            Be’pul konsultatsiya uchun ma’lumotlaringizni qoldiring
-          </p>
+        <Form onFinish={handleSubmit}>
+          <Flex
+            className="my-[100px] rounded-2xl bg-white p-14"
+            align="center"
+            vertical
+            gap={40}
+          >
+            <img width={200} src="/public/images/full-logo-dark.svg" alt="" />
+            <p className="text-2xl text-gray-400">
+              <b className="text-primary">Be’pul konsultatsiya</b> uchun
+              ma’lumotlaringizni qoldiring
+            </p>
 
-          <Flex vertical gap={20} className="w-full">
-            <Input
-              className="w-full border-2 border-gray-200 text-2xl focus:border-green-700 focus:shadow-none"
-              placeholder="Ism"
-            />
-            <Flex className="w-full">
-              <Flex
-                className="text-primary rounded-tl-md rounded-bl-md bg-gray-200 p-2 px-4 text-[18px]"
-                align="center"
-              >
-                +998
-              </Flex>
-              <Input
-                type="number"
-                className="rounded-tl-none rounded-bl-none border-2 border-gray-200 text-2xl focus:border-green-700 focus:shadow-none"
-                placeholder="Telefon raqam"
-              />
+            <Flex vertical gap={20} className="w-full">
+              <Form.Item name={'name'} className="m-0">
+                <Input
+                  className="w-full border-2 border-gray-200 p-2 px-4 text-2xl text-[18px] focus:border-green-700 focus:shadow-none"
+                  placeholder="Ism"
+                />
+              </Form.Item>
+              <Form.Item name={'age'} className="m-0">
+                <Flex className="w-full">
+                  <Flex
+                    className="text-primary rounded-tl-md rounded-bl-md bg-gray-200 p-2 px-4 text-[18px]"
+                    align="center"
+                  >
+                    +998
+                  </Flex>
+                  <Input
+                    type="number"
+                    className="rounded-tl-none rounded-bl-none border-2 border-gray-200 p-2 px-4 text-2xl text-[18px] focus:border-green-700 focus:shadow-none"
+                    placeholder="Telefon raqam"
+                  />
+                </Flex>
+              </Form.Item>
             </Flex>
+
+            <Button
+              htmlType="submit"
+              className="bg-primary border-primary w-full border-none p-2 px-4 py-6 text-2xl text-[18px] text-white hover:border hover:bg-green-900"
+            >
+              Yuborish
+            </Button>
           </Flex>
-
-          <Button className="bg-primary border-primary w-full border-none py-6 text-2xl text-white hover:border hover:bg-green-900">
-            Yuborish
-          </Button>
-        </Flex>
+        </Form>
       </Flex>
-      <Flex
-        id="Form"
-        className="bg-[url('/images/form-bg-2.png')] bg-cover px-16 text-2xl max-sm:px-0"
-      >
-        <Flex
-          className="w-full px-14 py-16 max-sm:hidden"
-          justify="center"
-          align="end"
-        >
-          1
-        </Flex>
-        <Flex className="px-14 py-[200px]" align="center" vertical gap={50}>
-          <img width={200} src="/public/images/white-full-logo.svg" alt="" />
-          <p className="text-2xl text-white">
-            Be’pul konsultatsiya uchun ma’lumotlaringizni qoldiring
-          </p>
 
-          <Flex vertical gap={20} className="w-full">
-            <Input
-              className="w-full border-2 border-transparent text-2xl focus:border-green-700 focus:shadow-none"
-              placeholder="Ism"
-            />
-            <Flex className="w-full">
-              <Flex
-                className="text-primary rounded-tl-md rounded-bl-md bg-gray-200 p-2 px-4 text-[18px]"
-                align="center"
-              >
-                +998
-              </Flex>
-              <Input
-                type="number"
-                className="rounded-tl-none rounded-bl-none border-2 border-transparent text-2xl focus:border-green-700 focus:shadow-none"
-                placeholder="Telefon raqam"
-              />
-            </Flex>
-          </Flex>
-
-          <Button className="bg-primary w-full rounded-none border-none py-6 text-2xl text-white hover:bg-green-900">
-            Yuborish
-          </Button>
-        </Flex>
-      </Flex>
       <Flex id="Location" className="relative">
         <Flex
           vertical
@@ -197,7 +99,7 @@ function FormSection() {
             <House />
             <p className="leading-none">Loyiha manzili</p>
           </Flex>
-          <p>Toshkent sh. Mirobod tumani, Shahrisabz tor ko'chasi, 2A</p>
+          <p>Toshkent sh. Mirzo Ulug'bek tumani, Yangi O'zbekiston ko'chasi</p>
         </Flex>
         <div className="z-30 w-full" style={{ overflow: 'hidden' }}>
           <iframe

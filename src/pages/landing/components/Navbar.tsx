@@ -1,11 +1,11 @@
 import { Flex } from 'antd';
-// import navbar from "../../../assets/images/navbar-right";
-
 import { useBoolean } from '../../../hooks/use-boolean';
 import { Hamburger, MiniLogo, XMark } from '../../../assets/svg';
 import { useEffect, useRef, useState } from 'react';
 import { FaLocationArrow, FaTelegram } from 'react-icons/fa6';
 import { FaInstagram, FaPhoneAlt } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
+import { changeLanguage } from 'i18next';
 
 const links = [
   { link: '#About', title: 'Biz haqimizda' },
@@ -18,12 +18,20 @@ const links = [
 
 const Navbar = () => {
   const isNavbarOpened = useBoolean(false);
-
+  const [activeLang, setActiveLang] = useState<string>(
+    localStorage.getItem('i18nextLng') || 'UZ', // Handle potential null value
+  );
+  const { t } = useTranslation();
   const [showNavbar, setShowNavbar] = useState(true);
   const [isTop, setIsTop] = useState(true); // New state for top scroll
   const [textColorChanged, setTextColorChanged] = useState(false);
 
   const lastScrollY = useRef(0);
+
+  const changeLang = (lang: string): void => {
+    changeLanguage(lang);
+    setActiveLang(lang);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,13 +74,13 @@ const Navbar = () => {
       </a>
       <Flex
         align="center"
-        className={`text-primary fixed top-0 z-50 h-16 w-full px-16 transition-all duration-300 ease-in-out max-sm:flex-row-reverse max-sm:px-6 ${
+        className={`text-primary fixed top-0 z-50 h-16 w-full px-16 transition-all duration-300 ease-in-out max-sm:px-6 ${
           !showNavbar && !isNavbarOpened.value
             ? '-translate-y-full'
             : 'translate-y-0'
         } ${!textColorChanged ? 'text-primary bg-transparent' : isTop ? 'bg-transparent text-white' : 'text-primary bg-white shadow-md'} `}
       >
-        <Flex align="center" gap={20} className="w-full max-sm:justify-end">
+        <Flex align="center" gap={20} className="w-full">
           <Flex
             className={`rounded-md border-2 p-1 ${!textColorChanged ? 'border-primary' : isTop ? 'border-white' : 'border-primary'}`}
             onClick={() => isNavbarOpened.onToggle()}
@@ -94,24 +102,32 @@ const Navbar = () => {
             href="#Plans"
             className={`max-sm:hidden ${!textColorChanged ? 'text-primary' : isTop ? 'text-white' : 'text-primary'}`}
           >
-            Xonadonlar
+            {t('navbar.Xonadonlar')}
           </a>
           <a
             href="#About"
             className={`max-sm:hidden ${!textColorChanged ? 'text-primary' : isTop ? 'text-white' : 'text-primary'}`}
           >
-            Biz haqimizda
+            {t('navbar.Bizhaqimizda')}
           </a>
         </Flex>
         <div>
           <MiniLogo />
         </div>
-        <a
-          href="tel:+998 78 150 12 12"
-          className={`max-sm:hidd w-full text-end max-sm:hidden ${!textColorChanged ? 'text-primary' : isTop ? 'text-white' : 'text-primary'}`}
-        >
-          78 150 12 12
-        </a>
+        <Flex className="w-full" justify="end" align="center" gap={20}>
+          <a
+            href="tel:+998 78 150 12 12"
+            className={`text-end max-sm:hidden ${!textColorChanged ? 'text-primary' : isTop ? 'text-white' : 'text-primary'}`}
+          >
+            78 150 12 12
+          </a>
+          <p
+            className="cursor-pointer text-2xl"
+            onClick={() => changeLang(`${activeLang == 'UZ' ? 'RU' : 'UZ'}`)}
+          >
+            {activeLang}
+          </p>
+        </Flex>
       </Flex>
       <Flex
         className={`fixed bottom-0 left-0 h-[calc(100vh-4rem)] w-full transition-opacity duration-500 ${
@@ -128,8 +144,12 @@ const Navbar = () => {
           }`}
         >
           <Flex vertical gap={10}>
-            {links.map(({ link, title }) => (
-              <a onClick={() => isNavbarOpened.onFalse()} href={link}>
+            {links.map(({ link, title }, linksIndex) => (
+              <a
+                key={linksIndex}
+                onClick={() => isNavbarOpened.onFalse()}
+                href={link}
+              >
                 {title}
               </a>
             ))}

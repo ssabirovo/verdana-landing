@@ -37,9 +37,9 @@ const Hero = () => {
             <p>Xonadonlar</p>
           </Flex>
           <Flex vertical className="text-end max-sm:text-start">
-            <p className="text-secondary">Yangi O'zbekiston ko'chasi </p>
-            <p>Ko'chasida Joylashgan</p>
-            <p> Premium xonadonlar</p>
+            <p className="text-secondary">Yangi O'zbekiston </p>
+            <p>Bog'i yonida joylashgan</p>
+            <p>Premium xonadonlar</p>
           </Flex>
         </Flex>
         <Flex

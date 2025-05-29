@@ -128,7 +128,7 @@ const Plans = () => {
 
   return (
     <Flex
-    id='Plans'
+      id="Plans"
       vertical
       className="text-primary gap-14 py-16 max-sm:gap-5 max-sm:pt-0"
       align="center"
@@ -137,6 +137,7 @@ const Plans = () => {
       <Flex className="gap-5 max-sm:gap-1">
         {planirovkalar.map(({ roomCount }, index) => (
           <div
+            key={index}
             onClick={() => setActiveIndex(index)}
             className={`text-primary cursor-pointer bg-gray-100 px-6 py-3 max-sm:px-3 max-sm:py-1 ${index === activeIndex ? 'bg-primary text-white' : 'text-primary bg-gray-100'}`}
           >
@@ -172,8 +173,9 @@ const Plans = () => {
             </Flex>
 
             <Flex gap={20} vertical className="w-full text-[18px]">
-              {rooms.map(({ meter, name }) => (
+              {rooms.map(({ meter, name }, roomsIndex) => (
                 <Flex
+                  key={roomsIndex}
                   justify="space-between"
                   className="w-full border-b border-white pb-1"
                 >

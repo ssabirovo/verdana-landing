@@ -84,26 +84,36 @@ const Faq = () => {
   };
 
   return (
-    <div id='Faq' className="px-16 py-[100px] max-sm:px-6">
-      <p className="text-primary py-7 text-4xl">Eng ko'p so'ralgan savollar</p>
-      <Collapse
-        className="text-[18px] max-sm:text-[16px]"
-        bordered={false}
-        defaultActiveKey={['1']}
-        expandIcon={({ isActive }) => (
-          <Flex justify="center" align="center">
-            <PlusOutlined
-              rotate={isActive ? 45 : 0}
-              style={{
-                fontSize: '24px',
-                color: 'gray',
-              }}
-            />
-          </Flex>
-        )}
-        style={{ background: token.colorBgContainer }}
-        items={getItems(panelStyle)}
-      />
+    <div id="Faq" className="px-16 py-[100px] max-sm:px-6">
+      <Flex
+        className="text-primary mb-16 text-4xl"
+        vertical
+        justify="center"
+        align="center"
+      >
+        <p className="text-gray-400">Eng ko'p so'ralgan</p>
+        <b>savollar</b>
+      </Flex>
+      <Flex align='center' justify="center">
+        <Collapse
+          className="w-[65%] text-[18px] max-sm:text-[16px]"
+          bordered={false}
+          defaultActiveKey={['1']}
+          expandIcon={({ isActive }) => (
+            <Flex justify="center" align="center">
+              <PlusOutlined
+                rotate={isActive ? 45 : 0}
+                style={{
+                  fontSize: '24px',
+                  color: 'gray',
+                }}
+              />
+            </Flex>
+          )}
+          style={{ background: token.colorBgContainer }}
+          items={getItems(panelStyle)}
+        />
+      </Flex>
     </div>
   );
 };
