@@ -5,9 +5,16 @@ import { useBoolean } from '../../../hooks/use-boolean';
 import { Hamburger, MiniLogo, XMark } from '../../../assets/svg';
 import { useEffect, useRef, useState } from 'react';
 import { FaLocationArrow, FaTelegram } from 'react-icons/fa6';
-import { FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaPhoneAlt } from 'react-icons/fa';
 
-// let isChanged = false;
+const links = [
+  { link: '#About', title: 'Biz haqimizda' },
+  { link: '#Features', title: 'Afzalliklarimiz' },
+  { link: '#Plans', title: 'Xonadonlar joylashuv' },
+  { link: '#Form', title: 'Bepul konsultatsiya' },
+  { link: '#Faq', title: "Ko'p beriladiga savollar" },
+  { link: '#Location', title: 'Yandex karta' },
+];
 
 const Navbar = () => {
   const isNavbarOpened = useBoolean(false);
@@ -52,6 +59,11 @@ const Navbar = () => {
 
   return (
     <Flex vertical>
+      <a href="tel:+998 78 150 12 12">
+        <Flex className="fixed right-16 bottom-16 z-50 cursor-pointer rounded-2xl bg-green-500 p-4 text-2xl text-white max-sm:right-6 max-sm:bottom-6 max-sm:p-3">
+          <FaPhoneAlt />
+        </Flex>
+      </a>
       <Flex
         align="center"
         className={`text-primary fixed top-0 z-50 h-16 w-full px-16 transition-all duration-300 ease-in-out max-sm:flex-row-reverse max-sm:px-6 ${
@@ -78,8 +90,18 @@ const Navbar = () => {
               </div>
             </div>
           </Flex>
-          <p className="max-sm:hidden">Xonadonlar</p>
-          <p className="max-sm:hidden">Biz haqimizda</p>
+          <a
+            href="#Plans"
+            className={`max-sm:hidden ${!textColorChanged ? 'text-primary' : isTop ? 'text-white' : 'text-primary'}`}
+          >
+            Xonadonlar
+          </a>
+          <a
+            href="#About"
+            className={`max-sm:hidden ${!textColorChanged ? 'text-primary' : isTop ? 'text-white' : 'text-primary'}`}
+          >
+            Biz haqimizda
+          </a>
         </Flex>
         <div>
           <MiniLogo />
@@ -106,13 +128,11 @@ const Navbar = () => {
           }`}
         >
           <Flex vertical gap={10}>
-            <p>Afzalliklarimiz</p>
-            <p>Xonadonlar ko'rinishi</p>
-            <p>Joylashuv</p>
-            <p>Bepul konsultatsiya</p>
-            <p>Loyiha infratuzilmasi</p>
-            <p>Ko'p beriladiga savollar</p>
-            <p>Yandex karta</p>
+            {links.map(({ link, title }) => (
+              <a onClick={() => isNavbarOpened.onFalse()} href={link}>
+                {title}
+              </a>
+            ))}
           </Flex>
           <Flex gap={10}>
             <FaTelegram size={20} />

@@ -2,7 +2,7 @@ import { Button, Flex } from 'antd';
 
 const About = () => {
   return (
-    <Flex className="w-full bg-gradient-to-br from-[#2C6466] to-[#082425] max-sm:flex-col">
+    <Flex id='About' className="w-full bg-gradient-to-br from-[#2C6466] to-[#082425] max-sm:flex-col">
       <Flex className="w-full bg-[url('/images/about-left.png')] p-16 py-20 bg-cover text-transparent max-sm:hidden">
         a
       </Flex>

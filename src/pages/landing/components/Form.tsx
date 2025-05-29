@@ -4,7 +4,7 @@ import { House } from '../../../assets/svg';
 function FormSection() {
   return (
     <>
-      <Flex className="bg-[url('/images/form-bg.png')] bg-cover px-16 text-2xl max-sm:px-0">
+      <Flex id='Form' className="bg-[url('/images/form-bg.png')] bg-cover px-16 text-2xl max-sm:px-0">
         <Flex
           className="w-full px-14 py-16 max-sm:hidden"
           justify="center"
@@ -39,7 +39,7 @@ function FormSection() {
           </Button>
         </Flex>
       </Flex>
-      <Flex className="relative">
+      <Flex id='Location' className="relative">
         <Flex
           vertical
           className="bg-primary absolute right-[50%] bottom-6 z-40 translate-x-[50%] p-5 text-[18px] text-white max-sm:w-[90%]"
@@ -58,6 +58,7 @@ function FormSection() {
             width="100%"
           ></iframe>
         </div>
+        
       </Flex>
     </>
   );

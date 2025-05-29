@@ -84,7 +84,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="px-16 py-[100px] max-sm:px-6">
+    <div id='Faq' className="px-16 py-[100px] max-sm:px-6">
       <p className="text-primary py-7 text-4xl">Eng ko'p so'ralgan savollar</p>
       <Collapse
         className="text-[18px] max-sm:text-[16px]"

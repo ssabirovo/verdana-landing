@@ -128,8 +128,9 @@ const Plans = () => {
 
   return (
     <Flex
+    id='Plans'
       vertical
-      className="text-primary gap-14 py-16 max-sm:gap-5"
+      className="text-primary gap-14 py-16 max-sm:gap-5 max-sm:pt-0"
       align="center"
     >
       <p className="text-5xl max-sm:text-2xl">Qulay rejalashtirish</p>

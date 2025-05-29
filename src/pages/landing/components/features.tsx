@@ -60,7 +60,7 @@ const Features = () => {
   const { description, icon, text, photoUrl } = features[activeIndex];
 
   return (
-    <Flex className="my-30 mb-16 px-16 max-sm:flex-col max-sm:px-6">
+    <Flex id="Features" className="my-30 mb-16 px-16 max-sm:flex-col max-sm:px-6 max-sm:mb-0">
       <Flex vertical className="text-primary w-full p-5 py-20" gap={40}>
         <p className="text-center text-4xl">Afzalliklarimiz</p>
         <div className="grid grid-cols-2 gap-10">
