@@ -16,8 +16,8 @@ const Landing = () => {
       <Navbar />
       <Hero />
       <About />
-      <CarouselSection />
       <Features />
+      <CarouselSection />
       <Plans />
       <Faq />
       <FormSection />
