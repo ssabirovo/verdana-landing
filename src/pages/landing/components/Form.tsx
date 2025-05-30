@@ -52,7 +52,7 @@ function FormSection() {
             vertical
             gap={40}
           >
-            <img width={200} src="/public/images/full-logo-dark.svg" alt="" />
+            <img width={200} src="/images/full-logo-dark.svg" alt="" />
             <p className="text-2xl text-gray-400" dangerouslySetInnerHTML={{ __html: t('form.description') }} />
 
             <Flex vertical gap={20} className="w-full">
