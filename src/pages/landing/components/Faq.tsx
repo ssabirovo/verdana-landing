@@ -1,80 +1,57 @@
 import { Collapse, Flex, theme, type CollapseProps } from 'antd';
 import type { CSSProperties } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
 
-const getItems: (panelStyle: CSSProperties) => CollapseProps['items'] = (
+const getItems: (panelStyle: CSSProperties, t: (key: string) => string) => CollapseProps['items'] = (
   panelStyle,
+  t,
 ) => [
   {
     key: '1',
-    label: <p className="text-primary">Bu loyiha qayerda joylashgan?</p>,
-    children: (
-      <p className="text-gray-500">
-        - Verdana turar-joy majmuamiz Mirzo Ulug'bek tumani, Yangi O'zbekiston
-        ko'chasida joylashgan, Mo'ljal Tanho zavodi yonida
-      </p>
-    ),
+    label: <p className="text-primary">{t('faq.q1')}</p>,
+    children: <p className="text-gray-500">{t('faq.a1')}</p>,
     style: panelStyle,
   },
   {
     key: '2',
-    label: <p className="text-primary">Xonadonlar qachon topshiriladi?</p>,
-    children: (
-      <p className="text-gray-500">
-        - Loyihamiz 2027-yilning, 2-choragida o'z egalariga topshiriladi
-      </p>
-    ),
+    label: <p className="text-primary">{t('faq.q2')}</p>,
+    children: <p className="text-gray-500">{t('faq.a2')}</p>,
     style: panelStyle,
   },
   {
     key: '3',
-    label: <p className="text-primary">Bu loyiha qaysi toifaga mansub?</p>,
-    children: <p className="text-gray-500">- Premium klass toifasiga mansub</p>,
+    label: <p className="text-primary">{t('faq.q3')}</p>,
+    children: <p className="text-gray-500">{t('faq.a3')}</p>,
     style: panelStyle,
   },
   {
     key: '4',
-    label: (
-      <p className="text-primary">
-        Ipoteka yoki kredit asosida xarid qilish mumkinmi?
-      </p>
-    ),
-    children: (
-      <p className="text-gray-500">
-        - Yo'q, bizda kredit yoki ipoteka asosida xonadonlar sotilmaydi.
-      </p>
-    ),
+    label: <p className="text-primary">{t('faq.q4')}</p>,
+    children: <p className="text-gray-500">{t('faq.a4')}</p>,
     style: panelStyle,
   },
   {
     key: '5',
-    label: <p className="text-primary">Qanday to'lov usullari mavjud?</p>,
+    label: <p className="text-primary">{t('faq.q5')}</p>,
     children: (
-      <p className="text-gray-500">
-        - Boshlang'ich uchun 40, 50, 60%, qolgan qismi 36 oylik muddatli to'lov
-        <br />
-        - Xonadonning umumiy 100% pulini 4 oydan 6 oygacha bo'lib to'lash <br />
-        - Oylik to'lovlarsiz, ya'ni 70% boshlang'ich, qolgan 30% ni esa
-        xonadonlar bitgandan keyin to'lash
+      <p className="text-gray-500" style={{ whiteSpace: 'pre-line' }}>
+        {t('faq.a5')}
       </p>
     ),
     style: panelStyle,
   },
   {
     key: '6',
-    label: <p className="text-primary">Xonadonlarning narxi qancha?</p>,
-    children: (
-      <p className="text-gray-500">
-        - Barcha xonadonlarning narxi individual hisoblangani uchun, faqatgina
-        ofisga tashrif buyurib bilish mumkin
-      </p>
-    ),
+    label: <p className="text-primary">{t('faq.q6')}</p>,
+    children: <p className="text-gray-500">{t('faq.a6')}</p>,
     style: panelStyle,
   },
 ];
 
 const Faq = () => {
   const { token } = theme.useToken();
+  const { t } = useTranslation();
 
   const panelStyle: React.CSSProperties = {
     marginBottom: 24,
@@ -91,8 +68,8 @@ const Faq = () => {
         justify="center"
         align="center"
       >
-        <p className="text-gray-400">Eng ko'p so'ralgan</p>
-        <b>savollar</b>
+        <p className="text-gray-400">{t('faq.topLabel')}</p>
+        <b>{t('faq.bottomLabel')}</b>
       </Flex>
       <Flex align='center' justify="center">
         <Collapse
@@ -111,7 +88,7 @@ const Faq = () => {
             </Flex>
           )}
           style={{ background: token.colorBgContainer }}
-          items={getItems(panelStyle)}
+          items={getItems(panelStyle, t)}
         />
       </Flex>
     </div>

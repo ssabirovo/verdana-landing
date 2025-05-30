@@ -1,6 +1,120 @@
 {
   "navbar": {
     "Xonadonlar": "Xonadonlar",
-    "Bizhaqimizda": "Biz haqimizda"
+    "Bizhaqimizda": "Biz haqimizda",
+    "Afzalliklarimiz": "Afzalliklarimiz",
+    "Xonadonlarjoylashuv": "Xonadonlar joylashuv",
+    "Bepulkonsultatsiya": "Bepul konsultatsiya",
+    "Faq": "Ko'p beriladiga savollar",
+    "Yandexkarta": "Yandex karta"
+  },
+  "hero": {
+    "premium": "Premium",
+    "xonadonlar": "Xonadonlar",
+    "yangiUzbekiston": "Yangi O'zbekiston",
+    "locationDescription": "Bog'i yonida joylashgan",
+    "premiumXonadonlar": "Premium xonadonlar"
+  },
+  "about": {
+    "biz": "Biz",
+    "haqimizda": "haqimizda",
+    "paragraph1": "Verdana — bu oddiy uy emas, bu hayot sifatining yangi darajasi. Yangi O‘zbekiston hududida joylashgan premium turar joy majmuasi bo‘lib, toza havo, tinch muhit va zamonaviy infratuzilmani o‘zida mujassam etadi.",
+    "paragraph2": "Bizda hamma narsa siz uchun yashashni qulaylashtirish va investitsiyani foydali qilish uchun mo‘ljallangan. Keng hudud, ammo cheklangan xonadonlar soni — bu esa sizga sukunat va xotirjamlik taqdim etadi.",
+    "qavatlar": "Qavatlar soni",
+    "xonadonlar": "Xonadonlar soni",
+    "batafsil": "Batafsil"
+  },
+  "features": {
+    "playground": {
+      "title": "Bolalar maydonchasi",
+      "description": "Farzandlaringiz uchun xavfsiz, zamonaviy va ekologik toza materiallardan qurilgan o‘yin maydonchasi. Farzandingiz ko‘z oldingizda o‘ynaydi, siz esa xotirjam bo‘lasiz."
+    },
+    "security": {
+      "title": "Qo‘riqlanadigan hudud",
+      "description": "Hudud to‘liq yopiq bo‘lib, 24/7 videokuzatuv va xavfsizlik xizmati bilan ta’minlangan. Har bir rezidentning osoyishtaligi biz uchun muhim."
+    },
+    "cleanAir": {
+      "title": "Toza havo",
+      "description": "Tirbandlikdan yiroq, shahar shovqinidan holi joyda joylashgan Verdana — toza havosi bilan sog‘lom turmush tarzini kafolatlaydi. Har nafasda yengillik."
+    },
+    "parkNearby": {
+      "title": "Yangi O‘zbekiston bog‘i yaqinida",
+      "description": "Verdanadan chiqib, bir necha qadamda Yangi O‘zbekiston bog‘iga yetasiz. Ertalabgi yugurishlar, oilaviy sayrlar yoki sokin dam olish uchun ideal joy."
+    },
+    "parking": {
+      "title": "Yer osti va yer usti avtoturargohlar",
+      "description": "Majmua hududida zamonaviy yer osti avtoturargohi qurilishi rejalashtirilgan bo‘lib, bu rezidentlarga qulay va xavfsiz avtomobil saqlash imkoniyatini yaratadi hamda hovli maydonining ochiq va tartibli bo‘lishini ta’minlaydi."
+    },
+    "greenZone": {
+      "title": "Yashil hudud",
+      "description": "Toza havo, sokin muhit va landshaft dizayn asosida barpo etilayotgan yashil maydonlar — bu yerda siz nafaqat yashaysiz, balki dam olasiz. Har kuni tabiat bag‘rida bo‘lish hissi."
+    }
+  },
+  "carousel": {
+    "location": "Yangi O'zbekistondagi nufuzli lokatsiya",
+    "future": "Kelajak sari yo'l biz bilan boshlanadi",
+    "profit": "Premium loyiha, premium daromad",
+    "space": "Kam xonadon, keng hudud",
+    "investors": "Investorlar tanlagan hudud",
+    "gratitude": "Har tongda o'zingizga rahmat aytasiz",
+    "createdForYou": "Siz uchun yaratilgan makon",
+    "premiumLife": "Verdana — premium klass, premium hayot"
+  },
+  "plans": {
+    "title": "Qulay rejalashtirish",
+    "roomCount": "{{count}} xonali",
+    "fromPrice": "{{price}} so'mdan",
+    "contact": "Bog'lanish",
+    "rooms": {
+      "Oshxona": "Oshxona",
+      "koridor": "Koridor",
+      "Koridor": "Koridor",
+      "Umumiy xona": "Umumiy xona",
+      "Hojatxona": "Hojatxona",
+      "Hammom": "Hammom",
+      "Studiya": "Studiya",
+      "Yotoqxona": "Yotoqxona",
+      "Yotoqxona-1": "Yotoqxona-1",
+      "Yotoqxona-2": "Yotoqxona-2",
+      "Dush": "Dush"
+    }
+  },
+  "faq": {
+    "topLabel": "Eng ko'p so'ralgan",
+    "bottomLabel": "savollar",
+    "q1": "Bu loyiha qayerda joylashgan?",
+    "a1": "- Verdana turar-joy majmuamiz Mirzo Ulug'bek tumani, Yangi O'zbekiston ko'chasida joylashgan, Mo'ljal Tanho zavodi yonida",
+    "q2": "Xonadonlar qachon topshiriladi?",
+    "a2": "- Loyihamiz 2027-yilning, 2-choragida o'z egalariga topshiriladi",
+    "q3": "Bu loyiha qaysi toifaga mansub?",
+    "a3": "- Premium klass toifasiga mansub",
+    "q4": "Ipoteka yoki kredit asosida xarid qilish mumkinmi?",
+    "a4": "- Yo'q, bizda kredit yoki ipoteka asosida xonadonlar sotilmaydi.",
+    "q5": "Qanday to'lov usullari mavjud?",
+    "a5": "- Boshlang'ich uchun 40, 50, 60%, qolgan qismi 36 oylik muddatli to'lov\n- Xonadonning umumiy 100% pulini 4 oydan 6 oygacha bo'lib to'lash\n- Oylik to'lovlarsiz, ya'ni 70% boshlang'ich, qolgan 30% ni esa xonadonlar bitgandan keyin to'lash",
+    "q6": "Xonadonlarning narxi qancha?",
+    "a6": "- Barcha xonadonlarning narxi individual hisoblangani uchun, faqatgina ofisga tashrif buyurib bilish mumkin"
+  },
+  "form": {
+    "description": "<b class='text-primary'>Be’pul konsultatsiya</b> uchun ma’lumotlaringizni qoldiring",
+    "namePlaceholder": "Ism",
+    "phonePlaceholder": "Telefon raqam",
+    "submit": "Yuborish",
+    "addressTitle": "Loyiha manzili",
+    "address": "Toshkent sh. Mirzo Ulug'bek tumani, Yangi O'zbekiston ko'chasi"
+  },
+  "footer": {
+    "salesOffice": "Sotuv ofisi",
+    "address": "Toshkent sh. Mirzo Ulug'bek tumani, Yangi O'zbekiston ko'chasi",
+    "workingDaysTitle": "Ish kunlari",
+    "workingHours": "Dush-Jum 9:00-18:00",
+    "sectionsTitle": "Bo'limlar",
+    "sections": {
+      "advantages": "Afzalliklar",
+      "apartments": "Xonadonlar",
+      "consultation": "Bepul Konsultatsiya",
+      "infrastructure": "Loyiha infratuzilmasi",
+      "faq": "Ko’p beriladigan savollar"
+    }
   }
 }

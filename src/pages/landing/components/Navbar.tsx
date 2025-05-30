@@ -8,12 +8,12 @@ import { useTranslation } from 'react-i18next';
 import { changeLanguage } from 'i18next';
 
 const links = [
-  { link: '#About', title: 'Biz haqimizda' },
-  { link: '#Features', title: 'Afzalliklarimiz' },
-  { link: '#Plans', title: 'Xonadonlar joylashuv' },
-  { link: '#Form', title: 'Bepul konsultatsiya' },
-  { link: '#Faq', title: "Ko'p beriladiga savollar" },
-  { link: '#Location', title: 'Yandex karta' },
+  { link: '#About', title: 'navbar.Bizhaqimizda' },
+  { link: '#Features', title: 'navbar.Afzalliklarimiz' },
+  { link: '#Plans', title: 'navbar.Xonadonlarjoylashuv' },
+  { link: '#Form', title: 'navbar.Bepulkonsultatsiya' },
+  { link: '#Faq', title: 'navbar.Faq' },
+  { link: '#Location', title: 'navbar.Yandexkarta' },
 ];
 
 const Navbar = () => {
@@ -122,7 +122,7 @@ const Navbar = () => {
             78 150 12 12
           </a>
           <p
-            className="cursor-pointer text-2xl"
+            className="cursor-pointer"
             onClick={() => changeLang(`${activeLang == 'UZ' ? 'RU' : 'UZ'}`)}
           >
             {activeLang}
@@ -150,7 +150,7 @@ const Navbar = () => {
                 onClick={() => isNavbarOpened.onFalse()}
                 href={link}
               >
-                {title}
+                {t(title)}
               </a>
             ))}
           </Flex>

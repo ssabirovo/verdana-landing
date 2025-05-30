@@ -1,7 +1,9 @@
 import { Flex } from 'antd';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [isNotTop, setIsNotTop] = useState(false);
 
   useEffect(() => {
@@ -33,13 +35,13 @@ const Hero = () => {
           className={`transition-all duration-700 ease-in-out max-sm:flex-col max-sm:items-start ${isNotTop ? 'h-0 -translate-y-10 opacity-0' : 'translate-y-0 opacity-100'}`}
         >
           <Flex vertical className="text-6xl">
-            <p className="text-secondary">Premium</p>
-            <p>Xonadonlar</p>
+            <p className="text-secondary">{t('hero.premium')}</p>
+            <p>{t('hero.xonadonlar')}</p>
           </Flex>
           <Flex vertical className="text-end max-sm:text-start">
-            <p className="text-secondary">Yangi O'zbekiston </p>
-            <p>Bog'i yonida joylashgan</p>
-            <p>Premium xonadonlar</p>
+            <p className="text-secondary">{t('hero.yangiUzbekiston')}</p>
+            <p>{t('hero.locationDescription')}</p>
+            <p>{t('hero.premiumXonadonlar')}</p>
           </Flex>
         </Flex>
         <Flex

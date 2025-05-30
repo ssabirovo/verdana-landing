@@ -1,8 +1,11 @@
 import { Flex } from 'antd';
 import { FaInstagram } from 'react-icons/fa';
 import { FaLocationDot, FaTelegram } from 'react-icons/fa6';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <Flex
       justify="space-between"
@@ -35,15 +38,14 @@ const Footer = () => {
       </Flex>
       <Flex vertical className="w-full text-center max-sm:hidden" gap={30}>
         <Flex vertical>
-          <p className="font-[600]">Sotuv ofisi</p>
+          <p className="font-[600]">{t('footer.salesOffice')}</p>
           <p className="font-[100]">
-            Toshkent sh. Mirzo Ulug'bek tumani, <br /> Yangi O'zbekiston ko'chasi
-             
+            {t('footer.address')}
           </p>
         </Flex>
         <Flex vertical>
-          <p className="font-[600]">Ish kunlari</p>
-          <p className="font-[100]">Dush-Jum 9:00-18:00</p>
+          <p className="font-[600]">{t('footer.workingDaysTitle')}</p>
+          <p className="font-[100]">{t('footer.workingHours')}</p>
         </Flex>
       </Flex>
       <Flex
@@ -52,12 +54,12 @@ const Footer = () => {
         gap={10}
         align="end"
       >
-        <p className="font-[600] text-white">Bo'limlar</p>
-        <a className="w-max text-end text-white">Afzalliklar</a>
-        <a className="w-max text-end text-white">Xonadonlar</a>
-        <a className="w-max text-end text-white">Bepul Konsultatsiya</a>
-        <a className="w-max text-end text-white">Loyiha infratuzilmasi</a>
-        <a className="w-max text-end text-white">Ko’p beriladigan savollar</a>
+        <p className="font-[600] text-white">{t('footer.sectionsTitle')}</p>
+        <a className="w-max text-end text-white">{t('footer.sections.advantages')}</a>
+        <a className="w-max text-end text-white">{t('footer.sections.apartments')}</a>
+        <a className="w-max text-end text-white">{t('footer.sections.consultation')}</a>
+        <a className="w-max text-end text-white">{t('footer.sections.infrastructure')}</a>
+        <a className="w-max text-end text-white">{t('footer.sections.faq')}</a>
       </Flex>
     </Flex>
   );

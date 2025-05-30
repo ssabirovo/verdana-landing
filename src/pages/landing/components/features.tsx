@@ -8,56 +8,22 @@ import {
   Parking,
 } from '../../../assets/svg';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const features = [
-  {
-    icon: <PlayGround />,
-    text: 'Bolalar maydonchasi',
-    photoUrl: '/images/kids.png',
-    description:
-      'Farzandlaringiz uchun xavfsiz, zamonaviy va ekologik toza materiallardan qurilgan o‘yin maydonchasi. Farzandingiz ko‘z oldingizda o‘ynaydi, siz esa xotirjam bo‘lasiz.',
-  },
-  {
-    icon: <Camera />,
-    text: 'Qo‘riqlanadigan hudud',
-    photoUrl: '/images/camera-man.png',
-    description:
-      'Hudud to‘liq yopiq bo‘lib, 24/7 videokuzatuv va xavfsizlik xizmati bilan ta’minlangan. Har bir rezidentning osoyishtaligi biz uchun muhim.',
-  },
-  {
-    icon: <Window />,
-    text: 'Toza havo',
-    photoUrl: '/images/clean-air.png',
-    description:
-      'Tirbandlikdan yiroq, shahar shovqinidan holi joyda joylashgan Verdana — toza havosi bilan sog‘lom turmush tarzini kafolatlaydi. Har nafasda yengillik.',
-  },
-  {
-    icon: <Park />,
-    text: 'Yangi O‘zbekiston bog‘i yaqinida',
-    photoUrl: '/images/park.png',
-    description:
-      'Verdanadan chiqib, bir necha qadamda Yangi O‘zbekiston bog‘iga yetasiz. Ertalabgi yugurishlar, oilaviy sayrlar yoki sokin dam olish uchun ideal joy.',
-  },
-  {
-    icon: <Parking />,
-    text: 'Yer osti va yer usti avtoturargohlar',
-    photoUrl: '/images/parking.png',
-    description:
-      'Majmua hududida zamonaviy yer osti avtoturargohi qurilishi rejalashtirilgan bo‘lib, bu rezidentlarga qulay va xavfsiz avtomobil saqlash imkoniyatini yaratadi hamda hovli maydonining ochiq va tartibli bo‘lishini ta’minlaydi.',
-  },
-  {
-    icon: <GreenZone />,
-    text: 'Yashil hudud',
-    photoUrl: '/images/green.png',
-    description:
-      'Toza havo, sokin muhit va landshaft dizayn asosida barpo etilayotgan yashil maydonlar — bu yerda siz nafaqat yashaysiz, balki dam olasiz. Har kuni tabiat bag‘rida bo‘lish hissi.',
-  },
+  { icon: <PlayGround />, key: 'playground', photoUrl: '/images/kids.png' },
+  { icon: <Camera />, key: 'security', photoUrl: '/images/camera-man.png' },
+  { icon: <Window />, key: 'cleanAir', photoUrl: '/images/clean-air.png' },
+  { icon: <Park />, key: 'parkNearby', photoUrl: '/images/park.png' },
+  { icon: <Parking />, key: 'parking', photoUrl: '/images/parking.png' },
+  { icon: <GreenZone />, key: 'greenZone', photoUrl: '/images/green.png' },
 ];
 
 const Features = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { t } = useTranslation();
 
-  const { description, icon, text, photoUrl } = features[activeIndex];
+  const { icon, key, photoUrl } = features[activeIndex];
 
   return (
     <Flex
@@ -65,9 +31,9 @@ const Features = () => {
       className="my-30 mb-16 px-16 max-sm:mb-0 max-sm:flex-col max-sm:px-6"
     >
       <Flex vertical className="text-primary w-full p-5 py-20" gap={40}>
-        <p className="text-center text-4xl">Afzalliklarimiz</p>
+        <p className="text-center text-4xl">{t('navbar.Afzalliklarimiz')}</p>
         <div className="grid grid-cols-2 gap-10">
-          {features.map(({ icon, text }, featuresIndex) => (
+          {features.map(({ icon, key }, featuresIndex) => (
             <Flex
               key={featuresIndex}
               vertical
@@ -77,7 +43,7 @@ const Features = () => {
               onClick={() => setActiveIndex(featuresIndex)}
             >
               {icon}
-              <p>{text}</p>
+              <p>{t(`features.${key}.title`)}</p>
             </Flex>
           ))}
         </div>
@@ -96,9 +62,9 @@ const Features = () => {
         >
           <Flex align="end" gap={10}>
             {icon}
-            <p className="leading-none">{text}</p>
+            <p className="leading-none">{t(`features.${key}.title`)}</p>
           </Flex>
-          <p className="text-[16px] font-[200]">{description}</p>
+          <p className="text-[16px] font-[200]">{t(`features.${key}.description`)}</p>
         </Flex>
       </Flex>
     </Flex>

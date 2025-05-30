@@ -1,8 +1,11 @@
 import axios from 'axios';
 import { Button, Flex, Form, Input } from 'antd';
 import { House } from '../../../assets/svg';
+import { useTranslation } from 'react-i18next';
 
 function FormSection() {
+  const { t } = useTranslation();
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSubmit = async (values: any) => {
     try {
@@ -50,16 +53,13 @@ function FormSection() {
             gap={40}
           >
             <img width={200} src="/public/images/full-logo-dark.svg" alt="" />
-            <p className="text-2xl text-gray-400">
-              <b className="text-primary">Be’pul konsultatsiya</b> uchun
-              ma’lumotlaringizni qoldiring
-            </p>
+            <p className="text-2xl text-gray-400" dangerouslySetInnerHTML={{ __html: t('form.description') }} />
 
             <Flex vertical gap={20} className="w-full">
               <Form.Item name={'name'} className="m-0">
                 <Input
                   className="w-full border-2 border-gray-200 p-2 px-4 text-2xl text-[18px] focus:border-green-700 focus:shadow-none"
-                  placeholder="Ism"
+                  placeholder={t('form.namePlaceholder')}
                 />
               </Form.Item>
               <Form.Item name={'age'} className="m-0">
@@ -73,7 +73,7 @@ function FormSection() {
                   <Input
                     type="number"
                     className="rounded-tl-none rounded-bl-none border-2 border-gray-200 p-2 px-4 text-2xl text-[18px] focus:border-green-700 focus:shadow-none"
-                    placeholder="Telefon raqam"
+                    placeholder={t('form.phonePlaceholder')}
                   />
                 </Flex>
               </Form.Item>
@@ -83,7 +83,7 @@ function FormSection() {
               htmlType="submit"
               className="bg-primary border-primary w-full border-none p-2 px-4 py-6 text-2xl text-[18px] text-white hover:border hover:bg-green-900"
             >
-              Yuborish
+              {t('form.submit')}
             </Button>
           </Flex>
         </Form>
@@ -97,9 +97,9 @@ function FormSection() {
         >
           <Flex align="end" gap={10}>
             <House />
-            <p className="leading-none">Loyiha manzili</p>
+            <p className="leading-none">{t('form.addressTitle')}</p>
           </Flex>
-          <p>Toshkent sh. Mirzo Ulug'bek tumani, Yangi O'zbekiston ko'chasi</p>
+          <p>{t('form.address')}</p>
         </Flex>
         <div className="z-30 w-full" style={{ overflow: 'hidden' }}>
           <iframe

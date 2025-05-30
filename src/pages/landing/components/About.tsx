@@ -1,6 +1,8 @@
 import { Button, Flex } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
   return (
     <Flex
       id="About"
@@ -15,37 +17,27 @@ const About = () => {
         gap={30}
       >
         <Flex vertical className="text-6xl font-[100]">
-          <p>Biz</p>
-          <p className="text-[#009499]">haqimizda</p>
+          <p>{t('about.biz')}</p>
+          <p className="text-[#009499]">{t('about.haqimizda')}</p>
         </Flex>
-        <p className="text-xl font-[200]">
-          Verdana — bu oddiy uy emas, bu hayot sifatining yangi darajasi. Yangi
-          O‘zbekiston hududida joylashgan premium turar joy majmuasi bo‘lib,
-          toza havo, tinch muhit va zamonaviy infratuzilmani o‘zida mujassam
-          etadi.
-        </p>
-        <p className="text-xl font-[200]">
-          Bizda hamma narsa siz uchun yashashni qulaylashtirish va
-          investitsiyani foydali qilish uchun mo‘ljallangan. Keng hudud, ammo
-          cheklangan xonadonlar soni — bu esa sizga sukunat va xotirjamlik
-          taqdim etadi.
-        </p>
+        <p className="text-xl font-[200]">{t('about.paragraph1')}</p>
+        <p className="text-xl font-[200]">{t('about.paragraph2')}</p>
         <Flex
           justify="space-between"
           className="text-xl font-[200] max-sm:flex-col max-sm:gap-2.5"
         >
           <Flex vertical>
             <p className="text-5xl">4-5</p>
-            <p>Qavatlar soni</p>
+            <p>{t('about.qavatlar')}</p>
           </Flex>
           <Flex vertical>
             <p className="text-5xl">120</p>
-            <p>Xonadonlar soni</p>
+            <p>{t('about.xonadonlar')}</p>
           </Flex>
         </Flex>
 
         <Button className="w-max rounded-none" size="large">
-          Batafsil
+          {t('about.batafsil')}
         </Button>
       </Flex>
     </Flex>

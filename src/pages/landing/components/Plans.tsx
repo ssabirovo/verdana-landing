@@ -1,5 +1,6 @@
 import { Button, Flex } from 'antd';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const planirovkalar = [
   {
@@ -123,6 +124,7 @@ const planirovkalar = [
 
 const Plans = () => {
   const [activeIndex, setActiveIndex] = useState(3);
+  const { t } = useTranslation();
   const { allMeters, photoUrl, price, roomCount, rooms } =
     planirovkalar[activeIndex];
 
@@ -133,7 +135,7 @@ const Plans = () => {
       className="text-primary gap-14 py-16 max-sm:gap-5 max-sm:pt-0"
       align="center"
     >
-      <p className="text-5xl max-sm:text-2xl">Qulay rejalashtirish</p>
+      <p className="text-5xl max-sm:text-2xl">{t('plans.title')}</p>
       <Flex className="gap-5 max-sm:gap-1">
         {planirovkalar.map(({ roomCount }, index) => (
           <div
@@ -141,7 +143,7 @@ const Plans = () => {
             onClick={() => setActiveIndex(index)}
             className={`text-primary cursor-pointer bg-gray-100 px-6 py-3 max-sm:px-3 max-sm:py-1 ${index === activeIndex ? 'bg-primary text-white' : 'text-primary bg-gray-100'}`}
           >
-            {roomCount} xonali
+            {t('plans.roomCount', { count: roomCount })}
           </div>
         ))}
       </Flex>
@@ -166,8 +168,8 @@ const Plans = () => {
               align="start"
             >
               <Flex vertical>
-                <p>{roomCount} xonali</p>
-                <p className="text-[16px] font-[100]">{price} so'mdan</p>
+                <p>{t('plans.roomCount', { count: roomCount })}</p>
+                <p className="text-[16px] font-[100]">{t('plans.fromPrice', { price })}</p>
               </Flex>
               <p>{allMeters}м²</p>
             </Flex>
@@ -179,14 +181,14 @@ const Plans = () => {
                   justify="space-between"
                   className="w-full border-b border-white pb-1"
                 >
-                  <p>{name}:</p>
+                  <p>{t(`plans.rooms.${name}`)}:</p>
                   <p>{meter}м²</p>
                 </Flex>
               ))}
             </Flex>
           </Flex>
           <Button className="w-max rounded-none border-none px-6 py-5 text-[18px]">
-            Bog'lanish
+            {t('plans.contact')}
           </Button>
         </Flex>
       </Flex>
