@@ -12,7 +12,7 @@ const CustomCarousel = ({ children }: { children: React.ReactNode[] }) => {
 
   return (
     <div className="relative w-full">
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden rounded-xs">
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}

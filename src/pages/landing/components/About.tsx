@@ -37,7 +37,7 @@ const About = () => {
         </Flex>
 
         <a href="#Form">
-          <Button className="w-max rounded-none" size="large">
+          <Button className="w-max rounded-md" size="large">
             {t('about.batafsil')}
           </Button>
         </a>

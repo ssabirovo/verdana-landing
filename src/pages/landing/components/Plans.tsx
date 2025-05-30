@@ -141,7 +141,7 @@ const Plans = () => {
           <div
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`text-primary cursor-pointer bg-gray-100 px-6 py-3 max-sm:px-3 max-sm:py-1 ${index === activeIndex ? 'bg-primary text-white' : 'text-primary bg-gray-100'}`}
+            className={`text-primary cursor-pointer rounded-md bg-gray-100 px-6 py-3 max-sm:px-3 max-sm:py-1 ${index === activeIndex ? 'bg-primary text-white' : 'text-primary bg-gray-100'}`}
           >
             {t('plans.roomCount', { count: roomCount })}
           </div>
@@ -158,7 +158,7 @@ const Plans = () => {
         <Flex
           vertical
           gap={40}
-          className="bg-primary w-full p-16 text-white max-sm:items-center max-sm:p-6"
+          className="bg-primary w-full p-16 text-white max-sm:items-center max-sm:p-6 rounded-l-xl"
           justify="space-between"
         >
           <Flex vertical gap={40} className="w-full">
@@ -190,7 +190,7 @@ const Plans = () => {
             </Flex>
           </Flex>
           <a href="#Form">
-            <Button className="w-max rounded-none border-none px-6 py-5 text-[18px]">
+            <Button className="w-max rounded-md border-none px-6 py-5 text-[18px]">
               {t('plans.contact')}
             </Button>
           </a>

@@ -1,5 +1,3 @@
-
-
 {
   "navbar": {
     "Xonadonlar": "Квартиры",
@@ -98,7 +96,7 @@
     "a6": "- Точная цена рассчитывается индивидуально — узнать можно при визите в офис."
   },
   "form": {
-    "description": "<b class='text-primary'>Для бесплатной консультации</b> оставьте свои данные",
+    "description": "<b class='text-primary'>Для бесплатной консультации</b> оставьте свои данные!",
     "namePlaceholder": "Имя",
     "phonePlaceholder": "Номер телефона",
     "submit": "Отправить",
@@ -109,8 +107,13 @@
     "salesOffice": "Офис продаж",
     "address": "г. Ташкент, район Мирзо Улугбека, улица Новый Узбекистан",
     "workingDaysTitle": "Рабочие дни",
-    "workingHours": "Пн-Пт 9:00-18:00",
+    "workingHours": "Пн-Вс 9:00-18:00",
     "sectionsTitle": "Разделы",
+    "landmark": {
+      "title": "Ориентир",
+      "description": "Рядом с фабрикой Танхо"
+    },
+
     "sections": {
       "advantages": "Преимущества",
       "apartments": "Квартиры",

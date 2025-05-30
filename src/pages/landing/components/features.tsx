@@ -23,7 +23,7 @@ const Features = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { t } = useTranslation();
 
-  const { icon, key, photoUrl } = features[activeIndex];
+  const { icon, key } = features[activeIndex];
 
   return (
     <Flex
@@ -54,17 +54,23 @@ const Features = () => {
         align="center"
         className={`w-full text-white`}
       >
-        <img className="w-[100%]" src={photoUrl} alt="" />
+        <img
+          className="w-[100%] rounded-xl"
+          src={'/images/clean-air.png'}
+          alt=""
+        />
         <Flex
           vertical
-          className="w-[90%] -translate-y-[50%] bg-[#2C6466] p-4"
+          className="w-[90%] -translate-y-[50%] rounded-xl bg-[#2C6466] p-4"
           gap={20}
         >
           <Flex align="end" gap={10}>
             {icon}
             <p className="leading-none">{t(`features.${key}.title`)}</p>
           </Flex>
-          <p className="text-[16px] font-[200]">{t(`features.${key}.description`)}</p>
+          <p className="text-[16px] font-[200]">
+            {t(`features.${key}.description`)}
+          </p>
         </Flex>
       </Flex>
     </Flex>

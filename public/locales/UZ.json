@@ -96,7 +96,7 @@
     "a6": "- Barcha xonadonlarning narxi individual hisoblangani uchun, faqatgina ofisga tashrif buyurib bilish mumkin"
   },
   "form": {
-    "description": "<b class='text-primary'>Be’pul konsultatsiya</b> uchun ma’lumotlaringizni qoldiring",
+    "description": "<b class='text-primary'>Be’pul konsultatsiya</b> uchun ma’lumotlaringizni qoldiring!",
     "namePlaceholder": "Ism",
     "phonePlaceholder": "Telefon raqam",
     "submit": "Yuborish",
@@ -107,8 +107,12 @@
     "salesOffice": "Sotuv ofisi",
     "address": "Toshkent sh. Mirzo Ulug'bek tumani, Yangi O'zbekiston ko'chasi",
     "workingDaysTitle": "Ish kunlari",
-    "workingHours": "Dush-Jum 9:00-18:00",
+    "workingHours": "Dush-Yak 10:00 — 20:00",
     "sectionsTitle": "Bo'limlar",
+    "landmark": {
+      "title": "Mo'ljal",
+      "description": "Tanho zavodi yoni"
+    },
     "sections": {
       "advantages": "Afzalliklar",
       "apartments": "Xonadonlar",

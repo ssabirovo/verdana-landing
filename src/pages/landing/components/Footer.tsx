@@ -44,6 +44,12 @@ const Footer = () => {
           </p>
         </Flex>
         <Flex vertical>
+          <p className="font-[600]">{t('footer.landmark.title')}</p>
+          <p className="font-[100]">
+            {t('footer.landmark.description')}
+          </p>
+        </Flex>
+        <Flex vertical>
           <p className="font-[600]">{t('footer.workingDaysTitle')}</p>
           <p className="font-[100]">{t('footer.workingHours')}</p>
         </Flex>
