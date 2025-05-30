@@ -92,7 +92,7 @@ function FormSection() {
       <Flex id="Location" className="relative">
         <Flex
           vertical
-          className="bg-primary absolute right-[50%] bottom-6 z-40 translate-x-[50%] p-5 text-[18px] text-white max-sm:w-[90%]"
+          className="bg-primary absolute right-[50%] bottom-6 z-40 translate-x-[50%] p-5 text-[18px] text-white max-sm:w-[90%] rounded-md"
           gap={20}
         >
           <Flex align="end" gap={10}>
