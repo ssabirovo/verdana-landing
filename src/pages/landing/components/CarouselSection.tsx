@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 function CarouselSection() {
   const { t } = useTranslation();
   return (
-    <Flex className="px-16 pb-[100px]">
+    <Flex className="px-16 pb-[100px] max-sm:px-6">
       <CustomCarousel>
         <Flex
           align="center"

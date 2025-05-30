@@ -73,7 +73,7 @@ const Faq = () => {
       </Flex>
       <Flex align='center' justify="center">
         <Collapse
-          className="w-[65%] text-[18px] max-sm:text-[16px]"
+          className="w-[65%] max-sm:w-full text-[18px] max-sm:text-[16px]"
           bordered={false}
           defaultActiveKey={['1']}
           expandIcon={({ isActive }) => (

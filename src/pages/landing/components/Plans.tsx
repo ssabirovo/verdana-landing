@@ -169,7 +169,9 @@ const Plans = () => {
             >
               <Flex vertical>
                 <p>{t('plans.roomCount', { count: roomCount })}</p>
-                <p className="text-[16px] font-[100]">{t('plans.fromPrice', { price })}</p>
+                <p className="text-[16px] font-[100]">
+                  {t('plans.fromPrice', { price })}
+                </p>
               </Flex>
               <p>{allMeters}м²</p>
             </Flex>
@@ -187,9 +189,11 @@ const Plans = () => {
               ))}
             </Flex>
           </Flex>
-          <Button className="w-max rounded-none border-none px-6 py-5 text-[18px]">
-            {t('plans.contact')}
-          </Button>
+          <a href="#Form">
+            <Button className="w-max rounded-none border-none px-6 py-5 text-[18px]">
+              {t('plans.contact')}
+            </Button>
+          </a>
         </Flex>
       </Flex>
     </Flex>

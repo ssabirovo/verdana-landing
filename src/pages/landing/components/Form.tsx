@@ -36,7 +36,7 @@ function FormSection() {
     <div className="w-">
       <Flex
         id="Form"
-        className="bg-[url('/images/form-bg-3.png')] bg-cover px-16 text-2xl max-sm:px-0"
+        className="bg-[url('/images/form-bg-3.png')] bg-cover px-16 text-2xl max-sm:px-6"
       >
         <Flex
           className="w-full px-14 py-16 max-sm:hidden"
@@ -47,7 +47,7 @@ function FormSection() {
         </Flex>
         <Form onFinish={handleSubmit}>
           <Flex
-            className="my-[100px] rounded-2xl bg-white p-14"
+            className="my-[100px] rounded-2xl bg-white p-14 max-sm:p-6"
             align="center"
             vertical
             gap={40}
