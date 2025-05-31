@@ -30,6 +30,7 @@ function FormSection() {
           {
             phoneNumber: `+998${formattedPhone.replace(/\D/g, '')}`,
             name: values.name,
+            tagList: ['#webform_verdana'],
           },
           {
             headers: {
