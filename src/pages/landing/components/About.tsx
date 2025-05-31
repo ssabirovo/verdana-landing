@@ -8,7 +8,7 @@ const About = () => {
       id="About"
       className="w-full bg-gradient-to-br from-[#2C6466] to-[#082425] max-sm:flex-col"
     >
-      <Flex className="w-full bg-[url('/images/about-left.png')] bg-cover p-16 py-20 text-transparent max-sm:hidden">
+      <Flex className="w-full bg-[url('/images/about-left.webp')] bg-cover p-16 py-20 text-transparent max-sm:hidden">
         a
       </Flex>
       <Flex

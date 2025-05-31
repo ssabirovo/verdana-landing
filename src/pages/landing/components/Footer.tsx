@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <Flex
       justify="space-between"
-      className="bg-[url('/images/footer-bg.png')] bg-cover px-16 py-16 text-[16px] text-white"
+      className="bg-[url('/images/footer-bg.webp')] bg-cover px-16 py-16 text-[16px] text-white"
     >
       <Flex vertical className="w-full max-sm:items-center" gap={40}>
         <img className="w-[200px]" src="/images/white-full-logo.svg" alt="" />

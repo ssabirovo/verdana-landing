@@ -11,12 +11,12 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const features = [
-  { icon: <PlayGround />, key: 'playground', photoUrl: '/images/kids.png' },
-  { icon: <Camera />, key: 'security', photoUrl: '/images/camera-man.png' },
-  { icon: <Window />, key: 'cleanAir', photoUrl: '/images/clean-air.png' },
-  { icon: <Park />, key: 'parkNearby', photoUrl: '/images/park.png' },
-  { icon: <Parking />, key: 'parking', photoUrl: '/images/parking.png' },
-  { icon: <GreenZone />, key: 'greenZone', photoUrl: '/images/green.png' },
+  { icon: <PlayGround />, key: 'playground', photoUrl: '/images/kids.webp' },
+  { icon: <Camera />, key: 'security', photoUrl: '/images/camera-man.webp' },
+  { icon: <Window />, key: 'cleanAir', photoUrl: '/images/clean-air.webp' },
+  { icon: <Park />, key: 'parkNearby', photoUrl: '/images/park.webp' },
+  { icon: <Parking />, key: 'parking', photoUrl: '/images/parking.webp' },
+  { icon: <GreenZone />, key: 'greenZone', photoUrl: '/images/green.webp' },
 ];
 
 const Features = () => {
@@ -56,7 +56,7 @@ const Features = () => {
       >
         <img
           className="w-[100%] rounded-xl"
-          src={'/images/clean-air.png'}
+          src={'/images/clean-air.webp'}
           alt=""
         />
         <Flex

@@ -48,7 +48,7 @@ const Hero = () => {
           className={`relative h-[400px] bg-amber-100 transition-all duration-700 ease-in-out max-sm:h-[250px] ${isNotTop ? 'h-full max-sm:h-full' : ''}`}
         >
           <img
-            src="/images/hero.png"
+            src="/images/hero.webp"
             className={`absolute bottom-0 h-full w-full object-cover transition-all duration-700 ease-in-out`}
             alt=""
           />
@@ -59,7 +59,7 @@ const Hero = () => {
           />
           <img
             className={`absolute bottom-0 h-full w-full object-cover transition-opacity duration-700 ease-in-out max-sm:hidden ${isNotTop ? 'opacity-0' : 'opacity-100'}`}
-            src="/images/hero-Photoroom.png"
+            src="/images/hero-Photoroom.webp"
             alt=""
           />
         </Flex>

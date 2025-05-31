@@ -7,7 +7,7 @@ const planirovkalar = [
     roomCount: 1,
     price: '1 550 080 000',
     allMeters: 45.8,
-    photoUrl: '/images/1-xona.png',
+    photoUrl: '/images/1-xona.webp',
     rooms: [
       {
         name: 'Oshxona',
@@ -36,7 +36,7 @@ const planirovkalar = [
     roomCount: 2,
     price: '1 550 080 000',
     allMeters: 53.1,
-    photoUrl: '/images/2-xona.png',
+    photoUrl: '/images/2-xona.webp',
     rooms: [
       {
         name: 'Studiya',
@@ -56,7 +56,7 @@ const planirovkalar = [
     roomCount: 3,
     price: '1 550 080 000',
     allMeters: 86.6,
-    photoUrl: '/images/3-xona.png',
+    photoUrl: '/images/3-xona.webp',
     rooms: [
       {
         name: 'Oshxona',
@@ -88,7 +88,7 @@ const planirovkalar = [
     roomCount: 4,
     price: '1 550 080 000',
     allMeters: 120.1,
-    photoUrl: '/images/4-xona.png',
+    photoUrl: '/images/4-xona.webp',
     rooms: [
       {
         name: 'Oshxona',
@@ -125,8 +125,7 @@ const planirovkalar = [
 const Plans = () => {
   const [activeIndex, setActiveIndex] = useState(3);
   const { t } = useTranslation();
-  const { allMeters, photoUrl, roomCount, rooms } =
-    planirovkalar[activeIndex];
+  const { allMeters, photoUrl, roomCount, rooms } = planirovkalar[activeIndex];
 
   return (
     <Flex

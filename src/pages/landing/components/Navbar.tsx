@@ -161,7 +161,7 @@ const Navbar = () => {
           </Flex>
         </Flex>
         <div
-          className={`w-full transform bg-[url('/images/navbar-right.png')] bg-right-top pr-16 text-transparent transition-transform duration-500 max-sm:hidden ${
+          className={`w-full transform bg-[url('/images/navbar-right.webp')] bg-right-top pr-16 text-transparent transition-transform duration-500 max-sm:hidden ${
             isNavbarOpened.value ? 'translate-x-0' : 'translate-x-full'
           }`}
         >

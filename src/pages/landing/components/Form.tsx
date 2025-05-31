@@ -53,7 +53,7 @@ function FormSection() {
     <div className="w-">
       <Flex
         id="Form"
-        className="bg-[url('/images/form-bg-3.png')] bg-cover px-16 text-2xl max-sm:px-6"
+        className="bg-[url('/images/form-bg-3.webp')] bg-cover px-16 text-2xl max-sm:px-6"
       >
         <Flex
           className="w-full px-14 py-16 max-sm:hidden"
