@@ -1,32 +1,48 @@
 import axios from 'axios';
-import { Button, Flex, Form, Input } from 'antd';
+import { Button, Flex, Form, Input, Modal } from 'antd';
 import { House } from '../../../assets/svg';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+import { FaRegCircleCheck } from 'react-icons/fa6';
 
 function FormSection() {
   const { t } = useTranslation();
+  const [formattedPhone, setFormattedPhone] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [form] = Form.useForm();
+
+  const formatPhoneNumber = (value: string) => {
+    const cleaned = value.replace(/\D/g, '').slice(0, 9);
+    const parts = [];
+    if (cleaned.length > 0) parts.push(cleaned.slice(0, 2));
+    if (cleaned.length > 2) parts.push(cleaned.slice(2, 5));
+    if (cleaned.length > 5) parts.push(cleaned.slice(5, 7));
+    if (cleaned.length > 7) parts.push(cleaned.slice(7, 9));
+    return parts.join('-');
+  };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleSubmit = async (values: any) => {
+  const handleSubmit = (values: any) => {
     try {
-      const response = await axios.post(
-        'https://service.app.uysot.uz/v1/external-source',
-        {
-          phoneNumber: `+998${values.age}`,
-          name: values.name,
-          tagList: ['#website', 'landing-page'],
-          houseName: 'VERDANA',
-          esType: 'WEBSITE',
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Auth':
-              'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTIiLCJleHAiOjY5OTM3MDc0MDJ9.skQsm_7dkoKi3QCZze0k1-NG_8g8_67KIpa96sD1nqw', // Replace with your actual token
+      axios
+        .post(
+          'https://service.app.uysot.uz/v1/external-source',
+          {
+            phoneNumber: `+998${formattedPhone.replace(/\D/g, '')}`,
+            name: values.name,
           },
-        },
-      );
-      console.log('Success:', response.data);
+          {
+            headers: {
+              'X-Auth':
+                'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTIiLCJleHAiOjY5OTM3MDc0MDJ9.skQsm_7dkoKi3QCZze0k1-NG_8g8_67KIpa96sD1nqw',
+            },
+          },
+        )
+        .then(() => {
+          setIsModalOpen(true);
+          form.resetFields(); // <-- this clears the inputs
+          setFormattedPhone('');
+        });
     } catch (error) {
       console.error('Submission error:', error);
     }
@@ -45,7 +61,7 @@ function FormSection() {
         >
           1
         </Flex>
-        <Form onFinish={handleSubmit}>
+        <Form form={form} onFinish={handleSubmit}>
           <Flex
             className="my-[100px] rounded-2xl bg-white p-14 max-sm:p-6"
             align="center"
@@ -53,7 +69,10 @@ function FormSection() {
             gap={40}
           >
             <img width={200} src="/images/full-logo-dark.svg" alt="" />
-            <p className="text-2xl text-gray-400" dangerouslySetInnerHTML={{ __html: t('form.description') }} />
+            <p
+              className="text-2xl text-gray-400"
+              dangerouslySetInnerHTML={{ __html: t('form.description') }}
+            />
 
             <Flex vertical gap={20} className="w-full">
               <Form.Item name={'name'} className="m-0">
@@ -71,7 +90,12 @@ function FormSection() {
                     +998
                   </Flex>
                   <Input
-                    type="number"
+                    value={formattedPhone}
+                    onChange={(e) => {
+                      const formatted = formatPhoneNumber(e.target.value);
+                      setFormattedPhone(formatted);
+                    }}
+                    name="age"
                     className="rounded-tl-none rounded-bl-none border-2 border-gray-200 p-2 px-4 text-2xl text-[18px] focus:border-green-700 focus:shadow-none"
                     placeholder={t('form.phonePlaceholder')}
                   />
@@ -92,7 +116,7 @@ function FormSection() {
       <Flex id="Location" className="relative">
         <Flex
           vertical
-          className="bg-primary absolute right-[50%] bottom-6 z-40 translate-x-[50%] p-5 text-[18px] text-white max-sm:w-[90%] rounded-md"
+          className="bg-primary absolute right-[50%] bottom-6 z-40 translate-x-[50%] rounded-md p-5 text-[18px] text-white max-sm:w-[90%]"
           gap={20}
         >
           <Flex align="end" gap={10}>
@@ -109,6 +133,24 @@ function FormSection() {
           ></iframe>
         </div>
       </Flex>
+      <Modal
+        centered
+        title={<p className="text-transparent">ae</p>}
+        open={isModalOpen}
+        onCancel={() => setIsModalOpen(false)}
+        footer={() => <></>}
+      >
+        <Flex vertical gap={30} align="center">
+          <FaRegCircleCheck className="text-primary" size={'50'} />
+          <Flex vertical gap={10} align="center">
+            <p className="text-primary text-4xl font-medium">Rahmat!</p>
+            <p className="text-md text-center font-medium text-gray-400">
+              Ma’lumotlaringiz qoldirildi. Siz bilan tez orada mutaxassislarimiz
+              bog‘lanishadi.
+            </p>
+          </Flex>
+        </Flex>
+      </Modal>
     </div>
   );
 }
