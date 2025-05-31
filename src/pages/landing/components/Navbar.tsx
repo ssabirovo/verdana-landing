@@ -68,7 +68,7 @@ const Navbar = () => {
   return (
     <Flex vertical>
       <a href="tel:+998 78 150 12 12">
-        <Flex className="fixed right-16 bottom-16 z-50 cursor-pointer rounded-2xl bg-green-500 p-4 text-2xl text-white max-sm:right-6 max-sm:bottom-6 max-sm:p-3">
+        <Flex className="animate-outline-pulse fixed right-16 bottom-16 z-50 cursor-pointer rounded-2xl bg-green-500 p-4 text-2xl text-white outline outline-transparent transition-all duration-[400ms] ease-in max-sm:right-6 max-sm:bottom-6 max-sm:p-3">
           <FaPhoneAlt />
         </Flex>
       </a>

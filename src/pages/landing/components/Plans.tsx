@@ -158,7 +158,7 @@ const Plans = () => {
         <Flex
           vertical
           gap={40}
-          className="bg-primary w-full p-16 text-white max-sm:items-center max-sm:p-6 rounded-l-xl"
+          className="bg-primary w-full rounded-l-xl p-16 text-white max-sm:items-center max-sm:p-6"
           justify="space-between"
         >
           <Flex vertical gap={40} className="w-full">
@@ -169,9 +169,6 @@ const Plans = () => {
             >
               <Flex vertical>
                 <p>{t('plans.roomCount', { count: roomCount })}</p>
-                <p className="text-[16px] font-[100]">
-                  {t('plans.fromPrice', { price })}
-                </p>
               </Flex>
               <p>{allMeters}м²</p>
             </Flex>

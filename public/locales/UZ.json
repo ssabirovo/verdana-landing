@@ -3,9 +3,9 @@
     "Xonadonlar": "Xonadonlar",
     "Bizhaqimizda": "Biz haqimizda",
     "Afzalliklarimiz": "Afzalliklarimiz",
-    "Xonadonlarjoylashuv": "Xonadonlar joylashuv",
+    "Xonadonlarjoylashuv": "Xonadonlar joylashuvi",
     "Bepulkonsultatsiya": "Bepul konsultatsiya",
-    "Faq": "Ko'p beriladiga savollar",
+    "Faq": "Ko'p beriladigan savollar",
     "Yandexkarta": "Yandex karta"
   },
   "hero": {
@@ -83,17 +83,17 @@
     "topLabel": "Eng ko'p so'ralgan",
     "bottomLabel": "savollar",
     "q1": "Bu loyiha qayerda joylashgan?",
-    "a1": "- Verdana turar-joy majmuamiz Mirzo Ulug'bek tumani, Yangi O'zbekiston ko'chasida joylashgan, Mo'ljal Tanho zavodi yonida",
+    "a1": "Verdana turar-joy majmuamiz Mirzo Ulug'bek tumani, Yangi O'zbekiston ko'chasida joylashgan, Mo'ljal Tanho zavodi yonida",
     "q2": "Xonadonlar qachon topshiriladi?",
-    "a2": "- Loyihamiz 2027-yilning, 2-choragida o'z egalariga topshiriladi",
+    "a2": "Loyihamiz 2027-yilning, 2-choragida o'z egalariga topshiriladi",
     "q3": "Bu loyiha qaysi toifaga mansub?",
-    "a3": "- Premium klass toifasiga mansub",
+    "a3": "Premium klass toifasiga mansub",
     "q4": "Ipoteka yoki kredit asosida xarid qilish mumkinmi?",
-    "a4": "- Yo'q, bizda kredit yoki ipoteka asosida xonadonlar sotilmaydi.",
+    "a4": "Yo'q, bizda kredit yoki ipoteka asosida xonadonlar sotilmaydi.",
     "q5": "Qanday to'lov usullari mavjud?",
     "a5": "- Boshlang'ich uchun 40, 50, 60%, qolgan qismi 36 oylik muddatli to'lov\n- Xonadonning umumiy 100% pulini 4 oydan 6 oygacha bo'lib to'lash\n- Oylik to'lovlarsiz, ya'ni 70% boshlang'ich, qolgan 30% ni esa xonadonlar bitgandan keyin to'lash",
     "q6": "Xonadonlarning narxi qancha?",
-    "a6": "- Barcha xonadonlarning narxi individual hisoblangani uchun, faqatgina ofisga tashrif buyurib bilish mumkin"
+    "a6": "Barcha xonadonlarning narxi individual hisoblangani uchun, faqatgina ofisga tashrif buyurib bilish mumkin"
   },
   "form": {
     "description": "<b class='text-primary'>Be’pul konsultatsiya</b> uchun ma’lumotlaringizni qoldiring!",

@@ -64,7 +64,7 @@ const Features = () => {
           className="w-[90%] -translate-y-[50%] rounded-xl bg-[#2C6466] p-4"
           gap={20}
         >
-          <Flex align="end" gap={10}>
+          <Flex align="center" gap={10}>
             {icon}
             <p className="leading-none">{t(`features.${key}.title`)}</p>
           </Flex>

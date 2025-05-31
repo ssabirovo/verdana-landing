@@ -15,12 +15,24 @@ module.exports = {
         customGrey: '#131212',
         customGreen: '#7d8d7b',
       },
-
       colors: {
         primary: {
           DEFAULT: '#2C6466', // main primary color
         },
         secondary: '#212D44',
+      },
+      keyframes: {
+        outlinePulse: {
+          '0%, 100%': {
+            outline: '0px solid transparent',
+          },
+          '50%': {
+            outline: '10px solid #86e086',
+          },
+        },
+      },
+      animation: {
+        outlinePulse: 'outlinePulse 1.5s infinite',
       },
     },
   },
