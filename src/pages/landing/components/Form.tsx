@@ -40,7 +40,7 @@ function FormSection() {
         )
         .then(() => {
           setIsModalOpen(true);
-          form.resetFields(); // <-- this clears the inputs
+          form.resetFields();
           setFormattedPhone('');
         });
     } catch (error) {
