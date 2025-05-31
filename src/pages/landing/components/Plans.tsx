@@ -125,7 +125,7 @@ const planirovkalar = [
 const Plans = () => {
   const [activeIndex, setActiveIndex] = useState(3);
   const { t } = useTranslation();
-  const { allMeters, photoUrl, price, roomCount, rooms } =
+  const { allMeters, photoUrl, roomCount, rooms } =
     planirovkalar[activeIndex];
 
   return (
