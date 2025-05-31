@@ -3,48 +3,44 @@ import type { CSSProperties } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 
-const getItems: (panelStyle: CSSProperties, t: (key: string) => string) => CollapseProps['items'] = (
-  panelStyle,
-  t,
-) => [
+const getItems: (
+  panelStyle: CSSProperties,
+  t: (key: string) => string,
+) => CollapseProps['items'] = (panelStyle, t) => [
   {
     key: '1',
-    label: <p className="text-primary">{t('faq.q1')}</p>,
-    children: <p className="text-gray-500">{t('faq.a1')}</p>,
+    label: <p className="text-primary font-[700]">{t('faq.q1')}</p>,
+    children: <p className="text-gray-500 font-[200]">{t('faq.a1')}</p>,
     style: panelStyle,
   },
   {
     key: '2',
-    label: <p className="text-primary">{t('faq.q2')}</p>,
-    children: <p className="text-gray-500">{t('faq.a2')}</p>,
+    label: <p className="text-primary font-[700]">{t('faq.q2')}</p>,
+    children: <p className="text-gray-500 font-[200]">{t('faq.a2')}</p>,
     style: panelStyle,
   },
   {
     key: '3',
-    label: <p className="text-primary">{t('faq.q3')}</p>,
-    children: <p className="text-gray-500">{t('faq.a3')}</p>,
+    label: <p className="text-primary font-[700]">{t('faq.q3')}</p>,
+    children: <p className="text-gray-500 font-[200]">{t('faq.a3')}</p>,
     style: panelStyle,
   },
   {
     key: '4',
-    label: <p className="text-primary">{t('faq.q4')}</p>,
-    children: <p className="text-gray-500">{t('faq.a4')}</p>,
+    label: <p className="text-primary font-[700]">{t('faq.q4')}</p>,
+    children: <p className="text-gray-500 font-[200]">{t('faq.a4')}</p>,
     style: panelStyle,
   },
   {
     key: '5',
-    label: <p className="text-primary">{t('faq.q5')}</p>,
-    children: (
-      <p className="text-gray-500" style={{ whiteSpace: 'pre-line' }}>
-        {t('faq.a5')}
-      </p>
-    ),
+    label: <p className="text-primary font-[700]">{t('faq.q5')}</p>,
+    children: <p className="text-gray-500 font-[200]" style={{ whiteSpace: 'pre-line' }}>{t('faq.a5')}</p>,
     style: panelStyle,
   },
   {
     key: '6',
-    label: <p className="text-primary">{t('faq.q6')}</p>,
-    children: <p className="text-gray-500">{t('faq.a6')}</p>,
+    label: <p className="text-primary font-[700]">{t('faq.q6')}</p>,
+    children: <p className="text-gray-500 font-[200]">{t('faq.a6')}</p>,
     style: panelStyle,
   },
 ];
@@ -71,9 +67,9 @@ const Faq = () => {
         <p className="text-gray-400">{t('faq.topLabel')}</p>
         <b>{t('faq.bottomLabel')}</b>
       </Flex>
-      <Flex align='center' justify="center">
+      <Flex align="center" justify="center">
         <Collapse
-          className="w-[65%] max-sm:w-full text-[18px] max-sm:text-[16px]"
+          className="w-[65%] text-[18px] max-sm:w-full max-sm:text-[16px]"
           bordered={false}
           defaultActiveKey={['1']}
           expandIcon={({ isActive }) => (

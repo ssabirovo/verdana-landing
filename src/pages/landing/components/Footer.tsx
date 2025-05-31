@@ -39,15 +39,11 @@ const Footer = () => {
       <Flex vertical className="w-full text-center max-sm:hidden" gap={30}>
         <Flex vertical>
           <p className="font-[600]">{t('footer.salesOffice')}</p>
-          <p className="font-[100]">
-            {t('footer.address')}
-          </p>
+          <p className="font-[100]">{t('footer.address')}</p>
         </Flex>
         <Flex vertical>
           <p className="font-[600]">{t('footer.landmark.title')}</p>
-          <p className="font-[100]">
-            {t('footer.landmark.description')}
-          </p>
+          <p className="font-[100]">{t('footer.landmark.description')}</p>
         </Flex>
         <Flex vertical>
           <p className="font-[600]">{t('footer.workingDaysTitle')}</p>
@@ -61,11 +57,18 @@ const Footer = () => {
         align="end"
       >
         <p className="font-[600] text-white">{t('footer.sectionsTitle')}</p>
-        <a className="w-max text-end text-white">{t('footer.sections.advantages')}</a>
-        <a className="w-max text-end text-white">{t('footer.sections.apartments')}</a>
-        <a className="w-max text-end text-white">{t('footer.sections.consultation')}</a>
-        <a className="w-max text-end text-white">{t('footer.sections.infrastructure')}</a>
-        <a className="w-max text-end text-white">{t('footer.sections.faq')}</a>
+        <a href="#Features" className="w-max text-end text-white">
+          {t('footer.sections.advantages')}
+        </a>
+        <a href="#Plans" className="w-max text-end text-white">
+          {t('footer.sections.apartments')}
+        </a>
+        <a href="#Form" className="w-max text-end text-white">
+          {t('footer.sections.consultation')}
+        </a>
+        <a href="#Faq" className="w-max text-end text-white">
+          {t('footer.sections.faq')}
+        </a>
       </Flex>
     </Flex>
   );

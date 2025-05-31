@@ -12,16 +12,18 @@ const CustomCarousel = ({ children }: { children: React.ReactNode[] }) => {
 
   return (
     <div className="relative w-full">
-      <div className="relative w-full overflow-hidden rounded-xs">
-        <div
-          className="flex transition-transform duration-700 ease-in-out"
-          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-        >
-          {children.map((child, index) => (
-            <div key={index} className="w-full flex-shrink-0">
-              {child}
-            </div>
-          ))}
+      <div className="overflow-hidden rounded-xl">
+        <div className="relative w-full">
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          >
+            {children.map((child, index) => (
+              <div key={index} className="w-full flex-shrink-0">
+                {child}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Dot Navigation */}
