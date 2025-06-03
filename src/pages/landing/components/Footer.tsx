@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <Flex
       justify="space-between"
-      className="bg-[url('/images/footer-bg.webp')] bg-cover px-16 py-16 text-[16px] text-white"
+      className="bg-[url('/images/footer-bg.webp')] bg-cover px-16 py-16 text-[16px] text-white max-sm:flex-col-reverse max-sm:gap-16"
     >
       <Flex vertical className="w-full max-sm:items-center" gap={40}>
         <img className="w-[200px]" src="/images/white-full-logo.svg" alt="" />
@@ -36,7 +36,7 @@ const Footer = () => {
           </a>
         </Flex>
       </Flex>
-      <Flex vertical className="w-full text-center max-sm:hidden" gap={30}>
+      <Flex vertical className="w-full text-center" gap={30}>
         <Flex vertical>
           <p className="font-[600]">{t('footer.salesOffice')}</p>
           <p className="font-[100]">{t('footer.address')}</p>
