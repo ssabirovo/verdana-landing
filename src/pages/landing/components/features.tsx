@@ -40,7 +40,7 @@ const Features = () => {
               justify="center"
               align="center"
               className={`cursor-pointer text-center`}
-              onClick={() => setActiveIndex(featuresIndex)}
+              onMouseEnter={() => setActiveIndex(featuresIndex)}
             >
               {icon}
               <p>{t(`features.${key}.title`)}</p>
