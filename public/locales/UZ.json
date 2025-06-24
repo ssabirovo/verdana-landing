@@ -96,7 +96,7 @@
     "a6": "Barcha xonadonlarning narxi individual hisoblangani uchun, faqatgina ofisga tashrif buyurib bilish mumkin"
   },
   "form": {
-    "description": "<b class='text-primary'>Be’pul konsultatsiya</b> uchun ma’lumotlaringizni qoldiring!",
+    "description": "<b class='text-primary'>Bepul konsultatsiya</b> uchun ma’lumotlaringizni qoldiring!",
     "namePlaceholder": "Ism",
     "phonePlaceholder": "Telefon raqam",
     "submit": "Yuborish",
